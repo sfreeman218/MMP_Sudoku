@@ -1,0 +1,76 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{float}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{160mm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{240mm}
+
+
+\title{Applying AI to Solve a Single Player Puzzle Game (Solitaire)}
+\author{Sam David Freeman [sdf2]}
+
+
+\begin{document}
+	\begin{titlepage}
+		
+		\noindent\LARGE\textbf{Applying AI to Solve a Single Player Puzzle Game(Solitaire)}\\ \\ 
+		\Large \textbf{Project outline}\\ \\ 
+		\normalsize
+		\begin{center}
+			\begin{table}[H]
+				\begin{tabular}{l}
+					Sam David Freeman (sdf2) \\
+					\\
+					Degree Scheme: G400 Computer Science    \\
+					Module: CS39440 Major Project    \\
+					Supervisor: Thomas Jansen (thj10)    \\
+					                          \\
+					Date: 06/02/2023               \\
+					Version: 1.0(Draft)              
+				\end{tabular}
+			\end{table}
+		\end{center}
+
+	\end{titlepage}
+
+\newpage
+\section*{Project Description}
+The project is based around the solving solitaire games, and for this I have chosen to apply AI to solve the logic based puzzle Sudoku. Sudoku is a well established problem and I have decided to tackle the problem using genetic algorithms. My program will have two different sections to it, solving a Sudoku puzzle and generating Sudoku puzzles with Unique solutions. \\ \\
+The project will use the idea of kanban boards, to monitor and track the progress of the different stories that need to be completed throughout the project. The project will also make use of the agile idea of a heartbeat, which will help keep the pace of the project and allow for adaptation further along in the project, whilst also havings workable code earlier on in the development time. 
+\section*{Proposed Tasks}
+\begin{itemize}
+	\item \textbf{Investigation of genetic algorithms.} Further reading into how to apply genetic algorithms to the problem will need to be done. This will be done by looking at papers on google scholar and looking into papers referenced by the most useful papers found.
+	\item \textbf{Setting up and maintaining version control system and issues board.} The project will use a git repository to hold all the files, and have a backup to any local files. This will be done using GitHub and will also make use of GitHubs issues and project board features, to add and keep track of tasks in the development of the project. 
+	\item \textbf{Spike work on application of genetic algorithm.} Before the theory behind the genetic algorithms can be applied to the problem of solving sudoku, some spike work will need to done first, in how to apply GA in the chosen programming language, which will either be Python or Java.
+	\item \textbf{Development.} In the development of the project, genetic algorithms will be used, the algorithm will need to represent the sudoku in some way, by seperating each block into integers and use these as the different genes the algorithm works with. There will be two main subtasks in the development of the project with the final goal being the linking of these two tasks:
+	\begin{itemize}
+		\item \textbf{Solving Sudoku.} The first part of the project will be the solving of sudoku, this will be done is several phases, with increase in difficulty. The increase in difficulty will be done by decreasing the number of given numbers, and increasing the size of the Sudoku, starting with a 4x4 puzzle and increasing in size to a 9x9. With hopefully by the end of the project being able to go past that to 16x16 or even 25x25. The exit conditions for the algorithm will be, either finding a suitable solution(an instance where all of the numbers are filled and does not exist in the same block or line as a number that is the same), or the program goes past the limit for a suitable number of generations.
+		\item \textbf{Generating unique Sudoku.} The second task in the development will taking on the task of generating unique sudoku puzzles for a user or the solver to complete. This will build on the solving of sudoku, but using a completely empty starting set, letting the genes mix and mutate over generations eventually creating a unique solved puzzle, then backtracking and removing random numbers from the puzzle until it reaches the required number for the selected difficulty. This program will start off by asking the user, the size and difficulty of the sudoku puzzle they want. Equally this program will start out by only working for only 4x4 but eventually getting to 16x16 or 25x25. 
+	\end{itemize} 
+	\item \textbf{Project meetings.} Project will have weekly meetings with supervisor, where summaries of the meetings will be documented and added onto the GitHub, which can then be converted to issues if anything urgent is pointed out.
+\end{itemize}
+\section*{Project Deliverables}
+\begin{itemize}
+	\item \textbf{Sudoku solver.} A stand alone application that takes an Sudoku puzzle as an input and gives an output result of a filled in puzzle. This will include the code behind the application, and instructions on how to launch it. The target time for completing the solver is the 6th of March, which means it can hopefully be used to show progress at the Mid project demonstration.
+	\item \textbf{Sudoku generator.} A stand alone application that can generate unique Sudoku puzzles of a given size and difficulty, this will then be possible to pipe into the solver program. This will include the code, runnable program and instructions on how to use the program. The target time for completing the generator is the 27th of March.
+	\item \textbf{Requirements document.} A document will be produced listing the requirements for the project, listing out the goals for what will count as the project being complete, as well as some non functional requirements as stretch goals. This will later be integrated into the final report. The target time for completion of the requirements document is 20th of February.
+	\item \textbf{Tests.} A set of tests will be created using the requirements, both unit and integration tests, which will be made using Junit or unittest depending on the language decided. There will also be a document produced alongside this, noting the results of the tests and how the different requirements have been met. The document will later be integrated into the final report, and the test code handed in alongside the technical work. The target time for the tests and testing document to be complete would be the 18th of April, however the tests themselves will be made alongside the programs.
+	\item \textbf{Final report.}
+	\item \textbf{Final demonstration.}
+\end{itemize}
+
+\section*{Initial Annotated Bibliography}
+@INPROCEEDINGS{4424632,
+	author={Mantere, Timo and Koljonen, Janne},
+	booktitle={2007 IEEE Congress on Evolutionary Computation}, 
+	title={Solving, rating and generating Sudoku puzzles with GA}, 
+	year={2007},
+	volume={},
+	number={},
+	pages={1382-1389},
+	doi={10.1109/CEC.2007.4424632}}\\
+
+\end{document}
