@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  7 FEB 2023 02:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  7 FEB 2023 13:29
 entering extended mode
 **./sdf2_ProjectOutline.tex
 (sdf2_ProjectOutline.tex
@@ -84,22 +84,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--43
  []
 
 [1]
-Overfull \hbox (10.21419pt too wide) in paragraph at lines 66--75
-\OT1/cmr/m/n/10 @INPROCEEDINGS4424632, au-thor=Mantere, Timo and Koljo-nen, Jan
-ne, book-ti-tle=2007 IEEE Congress
+Overfull \hbox (2.97003pt too wide) in paragraph at lines 66--73
+\OT1/cmr/m/n/10 Congress on Evo-lu-tion-ary Com-pu-ta-tion, Sin-ga-pore, 2007, 
+pp. 1382-1389, doi: 10.1109/CEC.2007.4424632. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--75
+Underfull \hbox (badness 10000) in paragraph at lines 66--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--73
+
+ []
+
+
+Overfull \hbox (44.9595pt too wide) in paragraph at lines 66--73
+\OT1/cmr/m/n/10 Lewis, R. Meta-heuris-tics can solve su-doku puz-zles. J Heuris
+-tics 13, 387{401 (2007). https://doi.org/10.1007/s10732-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--73
 
  []
 
 [2] (sdf2_ProjectOutline.aux) ) 
 Here is how much of TeX's memory you used:
- 462 strings out of 479799
- 8373 string characters out of 2870672
+ 463 strings out of 479799
+ 8391 string characters out of 2870672
  282149 words of memory out of 3000000
- 17526 multiletter control sequences out of 15000+200000
+ 17527 multiletter control sequences out of 15000+200000
  536942 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,7n,49p,768b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -108,7 +134,7 @@ our/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Sam/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Sam/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Sam/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on sdf2_ProjectOutline.pdf (3 pages, 61444 bytes).
+Output written on sdf2_ProjectOutline.pdf (3 pages, 63387 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
