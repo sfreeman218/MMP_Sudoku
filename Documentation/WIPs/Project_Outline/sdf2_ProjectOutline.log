@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  7 FEB 2023 13:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  10 FEB 2023 04:07
 entering extended mode
 **./sdf2_ProjectOutline.tex
 (sdf2_ProjectOutline.tex
@@ -79,64 +79,80 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {C:/Users/Sam/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 41--43
+Underfull \hbox (badness 10000) in paragraph at lines 41--46
 
  []
 
-[1]
-Overfull \hbox (2.97003pt too wide) in paragraph at lines 66--73
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--46
+
+ []
+
+[1] [2]
+Overfull \hbox (2.97003pt too wide) in paragraph at lines 82--90
 \OT1/cmr/m/n/10 Congress on Evo-lu-tion-ary Com-pu-ta-tion, Sin-ga-pore, 2007, 
 pp. 1382-1389, doi: 10.1109/CEC.2007.4424632. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--73
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--73
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
 
  []
 
 
-Overfull \hbox (44.9595pt too wide) in paragraph at lines 66--73
+Overfull \hbox (44.9595pt too wide) in paragraph at lines 82--90
 \OT1/cmr/m/n/10 Lewis, R. Meta-heuris-tics can solve su-doku puz-zles. J Heuris
 -tics 13, 387{401 (2007). https://doi.org/10.1007/s10732-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--73
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--73
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--73
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
 
  []
 
-[2] (sdf2_ProjectOutline.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
+
+ []
+
+
+Overfull \hbox (56.72813pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 tions Re-search Per-spec-tives, Vol-ume 2, 2015, Pages 97-105, 
+ISSN 2214-7160, https://doi.org/10.1016/j.orp.2015.04.001. 
+ []
+
+[3] (sdf2_ProjectOutline.aux) ) 
 Here is how much of TeX's memory you used:
- 463 strings out of 479799
- 8391 string characters out of 2870672
- 282149 words of memory out of 3000000
- 17527 multiletter control sequences out of 15000+200000
- 536942 words of font info for 35 fonts, out of 3000000 for 9000
+ 465 strings out of 479799
+ 8420 string characters out of 2870672
+ 284149 words of memory out of 3000000
+ 17529 multiletter control sequences out of 15000+200000
+ 537547 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,7n,49p,768b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,7n,49p,1023b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Sam\AppData\Local\MiKTeX\fonts/pk/ljf
 our/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Sam/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Sam/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Sam/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on sdf2_ProjectOutline.pdf (3 pages, 63387 bytes).
+Output written on sdf2_ProjectOutline.pdf (4 pages, 66815 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

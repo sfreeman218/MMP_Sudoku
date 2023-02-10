@@ -38,10 +38,11 @@
 
 \newpage
 \section*{Project Description}
-The project is based around the solving solitaire games, and for this I have chosen to apply AI to solve the logic based puzzle Sudoku. Sudoku is a well established problem and has been solved using constraint programming before. Therefore I want to look at alternative methods that can be used to solve it. Heuristics are an alternative way to approach this problem, there are over 2500 google scholar articles around the subject of sudoku and heuristics. There are several heuristics algorithms that could be used, however I have decided to tackle the problem using evolutionary algorithms. 
-
-My program will have two different sections to it, solving a Sudoku puzzle and generating Sudoku puzzles with Unique solutions. \\ \\
-The project will use the idea of kanban boards, to monitor and track the progress of the different stories that need to be completed throughout the project. The project will also make use of the agile idea of a heartbeat, which will help keep the pace of the project and allow for adaptation further along in the project, whilst also having workable code earlier on in the development time. 
+The project is based around the solving solitaire games, and for this I have chosen to apply AI to solve the logic based puzzle Sudoku. Sudoku is a well established problem and has been solved using constraint programming before. Therefore I want to look at alternative methods that can be used to solve it. Heuristics are an alternative way to approach this problem, there are over 2500 google scholar articles around the subject of sudoku and heuristics. There are several heuristics algorithms that could be used, however I have decided to tackle the problem using evolutionary algorithms. Another potential heuristic method was harmony search however there is a paper[1] by Dennis Weyland that talks about how harmony search is a unsuitable method for sudoku.
+\\ \\
+My program will have two different sections to it, solving a Sudoku puzzle and generating Sudoku puzzles with unique solutions. The main program will be the solving of Sudoku puzzle, with the generation of unique puzzles being more of a stretch goal for the project. This will initially start out as only a 4 by 4 puzzle but will work up to 9 by 9 and larger sizes, if possible within the time given allowing for a deliverable program even if there are issues along the way. The generating of sudoku puzzles will build on the work of solving the puzzles, again working with the search space, but will instead start with an empty starting set, making it a more complex problem, furthermore the need to create unique solutions for the sudoku adds even more complexity to the second task. The program will need to perform a local search, with an encoding of the puzzles and enforced rules, and then also using the crossover aspect of evolutionary algorithms to give a better performance overall.  
+\\ \\
+The methodology I would like to use in this project takes the values of scrum and adapts them to a single person project, with this I would like to take, review the work I am doing, at regular intervals, and adapt if something is not working. There is no need for the scrum team roles to be used for this project so those can be ignored, however the other part of Scrum I would like to use is the Scrum events, e.g. Sprint planning, daily scrum, sprint review, retrospective and the sprint itself, which will help keep the pace of the project and allow for adaptation further along in the project, whilst also having workable code earlier on in the development time. Instead of using the artifacts of Scrum I would like to make use of the idea of Kanban boards, to monitor and track the progress of the different issues that need to be completed throughout the project and limiting how much work can be taken on at one time.   
 \section*{Proposed Tasks}
 \begin{itemize}
 	\item \textbf{Investigation of evolutionary algorithms.} Further reading into how to apply evolutionary algorithms to the problem will need to be done. This will be done by looking at papers on google scholar and looking into papers referenced by the most useful papers found.
@@ -56,14 +57,27 @@ The project will use the idea of kanban boards, to monitor and track the progres
 \end{itemize}
 \section*{Project Deliverables}
 \begin{itemize}
-	\item \textbf{Sudoku solver.} A stand alone application that takes an Sudoku puzzle as an input and gives an output result of a filled in puzzle. This will include the code behind the application, and instructions on how to launch it. The target time for completing the solver is the 6th of March, which means it can hopefully be used to show progress at the Mid project demonstration.
+	\item \textbf{Sudoku solver.} A stand alone application that takes an Sudoku puzzle as an input and gives an output result of a filled in puzzle. This will include the code behind the application, and instructions on how to launch it. The target time for completing the solver is the 13th of March, which means it can hopefully be used to show progress at the Mid project demonstration.
 	\item \textbf{Sudoku generator.} A stand alone application that can generate unique Sudoku puzzles of a given size and difficulty, this will then be possible to pipe into the solver program. This will include the code, runnable program and instructions on how to use the program. The target time for completing the generator is the 27th of March.
 	\item \textbf{Requirements document.} A document will be produced listing the requirements for the project, listing out the goals for what will count as the project being complete, as well as some non functional requirements as stretch goals. This will later be integrated into the final report. The target time for completion of the requirements document is 20th of February.
 	\item \textbf{Tests.} A set of tests will be created using the requirements, both unit and integration tests, which will be made using Junit or unittest depending on the language decided. There will also be a document produced alongside this, noting the results of the tests and how the different requirements have been met. The document will later be integrated into the final report, and the test code handed in alongside the technical work. The target time for the tests and testing document to be complete would be the 18th of April, however the tests themselves will be made alongside the programs.
-	\item \textbf{Final report.} Due in 5th of May
-	\item \textbf{Final demonstration.} Due end of May
+	\item \textbf{Final report.} Due in 5th of May.
+	\item \textbf{Final demonstration.} Due end of May.
 \end{itemize}
-
+\subsection*{Deliverables dates}
+\begin{table}[H]
+	\begin{tabular}{|l|l|}
+		\hline
+		Task                  & Target date \\ \hline
+		Sudoku solver         & 13/03/2023  \\ \hline
+		Sudoku generator      & 27/03/2023  \\ \hline
+		Requirements document & 20/02/2023  \\ \hline
+		Testing               & 18/04/2023  \\ \hline
+		Final Report          & 05/05/2023  \\ \hline
+		Final demonstration   & TBD         \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
 \section*{Initial Annotated Bibliography}
 T. Mantere and J. Koljonen, "Solving, rating and generating Sudoku puzzles with GA," 2007 IEEE Congress on Evolutionary Computation, Singapore, 2007, pp. 1382-1389, doi: 10.1109/CEC.2007.4424632. \\Provides an in depth looks at methods required to solve and generate sudoku puzzles using GA. Will be used a future resource.  \\ \\
 Geem, Z.W. (2007). Harmony Search Algorithm for Solving Sudoku. In: Apolloni, B., Howlett, R.J., Jain, L. (eds) Knowledge-Based Intelligent Information and Engineering Systems. KES 2007. Lecture Notes in Computer Science(), vol 4692. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-540-74819-9\_46  \\Quick look into harmony search algorithm, example of alternative meta-heuristic algorithms used to solve sudoku. Probably will not be used in the project. \\ \\
@@ -71,7 +85,9 @@ Lewis, R. Metaheuristics can solve sudoku puzzles. J Heuristics 13, 387–401 (2
 N. Musliu and F. Winter, "A Hybrid Approach for the Sudoku Problem: Using Constraint Programming in Iterated Local Search," in IEEE Intelligent Systems, vol. 32, no. 2, pp. 52-62, Mar.-Apr. 2017, doi: 10.1109/MIS.2017.29. \\Paper on Constraint programming to solve sudoku. Example of alternative algorithms used to solve sudoku. Probably will not be used in the project. \\ \\
 Russell, S.J. and Norvig, P. (2014) “Beyond Classical Search,” in Artificial Intelligence: A modern approach. Harlow, Essex: Pearson. \\ Contains a subsection on genetic algorithms, helpful for implementing them in the project. \\ \\
 Sturm, Thomas. (2009). Sudoku and A.I... 2. 910-911. \\ Provides a brief summary of a proposed approach to solving sudoku with AI, quite general. Probably not useful further along than initial research \\ \\
-Mahima Dubey, Vijay Kumar, Manjit Kaur, Thanh-Phong Dao, "A Systematic Review on Harmony Search Algorithm: Theory, Literature, and Applications", Mathematical Problems in Engineering, vol. 2021, Article ID 5594267, 22 pages, 2021. https://doi.org/10.1155/2021/5594267 \\ Provides further insight into harmony search algorithm as well as a general summary of meta-heuristic algorithms in the introduction. Probably will not be used past initial research. 
+Mahima Dubey, Vijay Kumar, Manjit Kaur, Thanh-Phong Dao, "A Systematic Review on Harmony Search Algorithm: Theory, Literature, and Applications", Mathematical Problems in Engineering, vol. 2021, Article ID 5594267, 22 pages, 2021. https://doi.org/10.1155/2021/5594267 \\ Provides further insight into harmony search algorithm as well as a general summary of meta-heuristic algorithms in the introduction. Probably will not be used past initial research. \\ \\
+Dennis Weyland, A critical analysis of the harmony search algorithm—How not to solve sudoku, Operations Research Perspectives, Volume 2, 2015, Pages 97-105, ISSN 2214-7160, https://doi.org/10.1016/j.orp.2015.04.001.\\ Paper about harmony search flaws and lack of suitability to sudoku. [1]
+
 
 
 \end{document}
