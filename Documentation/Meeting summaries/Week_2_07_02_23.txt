@@ -1,6 +1,34 @@
 Questions going in:
 Do you think using GA is a good idea for the project?
-For the project outline I do not really have a great justification for the problem and it makes for a weak project description, how can I improve on this?
-Do I need to add anything in the description of final report and demonstration, it seems self explanitory to me?
+Rename to Evolutionary algorithms rather than genetic algorithms, what makes it unique compared to others work?
 
-Meeting discussion:
+For the project outline I do not really have a great justification for the problem and it makes for a weak project description, how can I improve on this?
+General outline to use:
+The puzzle exists and want to solve it
+It has already been solved well with constraint programming
+Want to use a heuristic approach, 2500 publications on google scholar
+Follow Russel/Norvig principled approach
+building up from simple start to more complex heuristics
+First go to Local search
+How is the puzzle encoded
+How do you enforce rules
+What makes one neighbour better than another
+Step 2 Simulated annealing
+Does it do any better?
+Step 3
+Evolutionary algorithms
+Uses the local search but adds in crossover
+Does it do any better
+
+Do I need to add anything in the description of final report and demonstration, it seems self explanitory to me?
+Add dates for them, not much else needed
+
+Other topics discussed:
+Harmony search is not a good search method
+Do further reading on Evolutionary algorithms
+
+Goals for next week:
+Literature search for sudoku in EA:
+- encoding/representation, look at what others have done, make an informed decision for the project. 
+- operators/neighbourhoods, looks at the methods others have used, see how to apply.
+- constraint handling for EA, look at methods other have used, see how it can be applied.
