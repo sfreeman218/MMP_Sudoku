@@ -1,0 +1,31 @@
+Papers read this week:
+Theoretical and numerical constraint-handling techniques used with evolutionary algorithms: a survey of the state of the art
+https://www.sciencedirect.com/science/article/pii/S0045782501003231
+Gives a summary of different constraint-handling techniques
+
+On the Use of Repair Methods in Differential Evolution for Dynamic Constrained Optimization
+https://cs.adelaide.edu.au/~frank/papers/evostar-impact-repair.pdf
+A more in depth look at repair methods
+
+A survey of repair methods used as constraint handling techniques in evolutionary algorithms
+https://www.sciencedirect.com/science/article/pii/S1574013709000379
+Compares some repair methods
+
+Improved ant colony genetic algorithm hybrid for Sudoku solving
+https://ieeexplore.ieee.org/abstract/document/7113148
+Talks about encoding method and also ant colony
+
+The importance of diversity in the application of evolutionary algorithms to the Sudoku problem
+https://ieeexplore.ieee.org/abstract/document/7743888
+Talks on encoding and interesting paragraph linking operator and puzzle complexity to performance
+
+Genetic Algorithms and Sudoku 
+https://micsymposium.org/mics_2009_proceedings/mics2009_submission_66.pdf
+Talks on approach taken, including encoding
+
+The importance of diversity in the application of evolutionary algorithms to the Sudoku problem
+https://ieeexplore.ieee.org/abstract/document/7743888
+Some talk on encoding
+
+Sudoku evolution
+https://ieeexplore.ieee.org/abstract/document/5293614
