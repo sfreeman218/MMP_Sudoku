@@ -94,6 +94,7 @@ public class SolverTest {
         int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
         Puzzle p = new Puzzle(4,values);
         solver.generatePopulation(p);
+        solver.splitPopulation();
         assertTrue(solver.getPopulationSize() == 5000);
     }
 
