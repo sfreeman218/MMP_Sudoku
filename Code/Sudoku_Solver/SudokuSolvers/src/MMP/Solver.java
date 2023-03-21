@@ -69,7 +69,6 @@ public class  Solver {
         if (!puzzleComplete) {
             while (counter < LOOP_SIZE && !puzzleComplete) {
                 counter++;
-                updateFitnessValue();
                 sortPopulation();
                 System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getFitness() + " Worst fitness value = " + population.get(0).getFitness());
                 splitPopulation();
@@ -93,11 +92,11 @@ public class  Solver {
      */
     public void generatePopulation(Puzzle puzzle){
         setInitialState(puzzle);
+        puzzle.updateFitness();
         for (int i = 0; i < POPULATION_SIZE; i++) {
             Puzzle newPop = new Puzzle(puzzle);
-
             mutatePuzzle(newPop);
-
+            newPop.updateFitness();
             population.add(newPop);
         }
     }
@@ -106,9 +105,7 @@ public class  Solver {
      * Splits the population based on the population size divided by the number of children each mutation generates
      */
     public void splitPopulation(){
-        for (int i = 0; i < POPULATION_SIZE/MUTATION_RATE; i++) {
-            population.remove(0);
-        }
+        population.subList(0,POPULATION_SIZE/MUTATION_RATE).clear();
     }
 
     /**
@@ -116,15 +113,6 @@ public class  Solver {
      */
     public void sortPopulation(){
         population.sort(Comparator.comparing(Puzzle::getFitness));
-    }
-
-    /**
-     * Updates the fitness values for each puzzle in the population
-     */
-    private void updateFitnessValue(){
-        for (Puzzle p: population) {
-            p.updateFitness();
-        }
     }
 
     /**
@@ -136,9 +124,11 @@ public class  Solver {
             for (int i = 0; i < MUTATION_RATE-1; i++) {
                 Puzzle newPop = new Puzzle(p);
                 mutatePuzzle(newPop);
+                newPop.updateFitness();
                 popAdditions.add(newPop);
             }
             mutatePuzzle(p);
+            p.updateFitness();
         }
         population.addAll(popAdditions);
     }
@@ -303,7 +293,13 @@ public class  Solver {
         return puzzle;
     }
 
-
+    /**
+     * Gets the population size
+     * @return size of population as int
+     */
+    public int getPopulationSize(){
+        return population.size();
+    }
 
     public void printPuzzle(Puzzle puzzle) {
         System.out.println(puzzle.toString());

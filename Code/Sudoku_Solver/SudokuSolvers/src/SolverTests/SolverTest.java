@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import MMP.Puzzle;
 import MMP.Solver;
 
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SolverTest {
@@ -77,4 +80,51 @@ public class SolverTest {
         Puzzle p = new Puzzle(9,values);
         assertTrue(solver.getSolution(p));
     }
+
+    @Test
+    public void isPopulationGenerated(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values);
+        solver.generatePopulation(p);
+        assertTrue(solver.getPopulationSize() == 10000);
+    }
+
+    @Test
+    public void doesPopulationSplit(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values);
+        solver.generatePopulation(p);
+        assertTrue(solver.getPopulationSize() == 5000);
+    }
+
+    @Test
+    public void isPopulationMutated(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values);
+        solver.generatePopulation(p);
+        solver.mutatePopulation();
+        assertTrue(solver.getPopulationSize() == 20000);
+    }
+
+    @Test
+    public void checkSpacePermanent(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values);
+        solver.generatePopulation(p);
+        assertFalse(solver.isSpacePermanent(0,0));
+        assertTrue(solver.isSpacePermanent(0,3));
+    }
+
+    @Test
+    public void isChangeableSpacesCorrect(){
+        ArrayList<int[]> spaces = new ArrayList<>();
+        spaces.add(new int[]{});
+    }
+
+    @Test
+    public void isInitialCoordsCorrect(){
+
+    }
+
+
 }

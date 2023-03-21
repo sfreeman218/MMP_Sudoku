@@ -36,6 +36,10 @@ public class Puzzle {
       updateFitness();
    }
 
+   /**
+    * Creates puzzle using another puzzles information
+    * @param initialPuzzle Puzzle being copied
+    */
    public Puzzle(Puzzle initialPuzzle){
       this.puzzleSize = initialPuzzle.getPuzzleSize();
       this.puzzleSpace = new int[puzzleSize][puzzleSize];
@@ -44,7 +48,7 @@ public class Puzzle {
             puzzleSpace[i][j] = initialPuzzle.getPuzzleSpace()[i][j];
          }
       }
-
+      puzzleFitness = initialPuzzle.getFitness();
       this.gridSize = initialPuzzle.gridSize;
    }
 
@@ -248,6 +252,10 @@ public class Puzzle {
       return totalViolationsArray;
    }
 
+   /**
+    * Sorts the violations by the total number of occurrences
+    * @return Sorted ArrayList of int[] of violations
+    */
    public ArrayList<int[]> sortViolations(){
       ArrayList<int[]> violationArray = countViolations(getAllViolations());
       violationArray.sort(Comparator.comparing(a->a[2]));
@@ -265,7 +273,7 @@ public class Puzzle {
    }
 
    /**
-    *
+    * Finds if a space is empty
     * @param row Row number
     * @param column Column number
     * @return True is the space is needed, otherwise false
@@ -292,10 +300,17 @@ public class Puzzle {
       return spaces;
    }
 
+   /**
+    * Updates the fitness value of the puzzle
+    */
    public void updateFitness(){
       puzzleFitness = (puzzleSize * puzzleSize) - getEmptySpaces().size();
    }
 
+   /**
+    * Gets the fitness of a puzzle
+    * @return int value of the fitness
+    */
    public int getFitness(){
       return puzzleFitness;
    }
@@ -307,7 +322,7 @@ public class Puzzle {
 
       for (int i = 0; i < puzzleSize; i++) {
          for (int j = 0; j < puzzleSize; j++) {
-            stringBuilder.append(puzzleSpace[i][j]);
+            stringBuilder.append(puzzleSpace[i][j]).append(" ");
          }
          stringBuilder.append("\n");
       }
