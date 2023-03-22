@@ -93,7 +93,7 @@ public class PuzzleTest {
         correctViolation.add(new int[]{1,1,2});
         correctViolation.add(new int[]{3,1,2});
         correctViolation.add(new int[]{0,1,2});
-        assertArrayEquals(correctViolation.toArray(),p.countViolations(violation).toArray());
+        assertArrayEquals(correctViolation.toArray(),p.countViolations().toArray());
     }
 
 

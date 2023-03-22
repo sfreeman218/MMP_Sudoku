@@ -16,75 +16,20 @@ import java.util.Scanner;
 public class  Solver {
 
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Solver solver = new Solver();
-        solver.menuLoop();
-    }
+    public int[] getSolution(Puzzle p){return null;}
 
     public static final int LOOP_SIZE = 100000;
     public static final int POPULATION_SIZE = 10000;
     public static final int MUTATION_RATE = 2;
 
 
-    private void menuLoop() throws FileNotFoundException {
-        Scanner scanner = new Scanner(System.in);
-        boolean nextPuzzle = true;
 
-        while (nextPuzzle) {
-            System.out.println("Sudoku solver:\n1.Choose puzzle to solve\n2.Input own puzzle\n3.Exit system");
-            String choice = scanner.nextLine();
-            switch (choice) {
-                case "1" -> {
-                    population = new ArrayList<>();
-                    getSolution(loadPopulation(scanner));
-                }
-                case "2" -> {
-                    population = new ArrayList<>();
-                    getSolution(manualPuzzlePopulation());
-                }
-                case "3" -> nextPuzzle = false;
-                default -> System.out.println("Invalid input");
-            }
-        }
-    }
-
-
-
-    private ArrayList<Puzzle> population = new ArrayList<>();
-    private ArrayList<int[]> initialCoordinates;
+    protected ArrayList<Puzzle> population = new ArrayList<>();
+    protected ArrayList<int[]> initialCoordinates;
 
     public Solver(){
 
     }
-
-    /**
-     * Takes a puzzle object and tries to find a solution
-     * @param puzzle The initial puzzle representation
-     * @return The success of the method
-     */
-    public boolean getSolution(Puzzle puzzle) {
-        generatePopulation(puzzle);
-        int counter = 0;
-        boolean puzzleComplete = isPuzzleComplete();
-        if (!puzzleComplete) {
-            while (counter < LOOP_SIZE && !puzzleComplete) {
-                counter++;
-                sortPopulation();
-                System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getFitness() + " Worst fitness value = " + population.get(0).getFitness());
-                splitPopulation();
-                repairPopulation();
-                puzzleComplete = isPuzzleComplete();
-                if (!puzzleComplete) {
-                    mutatePopulation();
-                }
-            }
-        }
-        if (puzzleComplete){
-            return true;
-        }
-        else {System.out.println("Program did not find a viable solution"); return false;}
-    }
-
 
     /**
      * Generates the initial population from the given puzzle
@@ -92,11 +37,11 @@ public class  Solver {
      */
     public void generatePopulation(Puzzle puzzle){
         setInitialState(puzzle);
-        puzzle.updateFitness();
+        updateFitness(puzzle);
         for (int i = 0; i < POPULATION_SIZE; i++) {
             Puzzle newPop = new Puzzle(puzzle);
             mutatePuzzle(newPop);
-            newPop.updateFitness();
+            updateFitness(newPop);
             population.add(newPop);
         }
     }
@@ -105,14 +50,14 @@ public class  Solver {
      * Splits the population based on the population size divided by the number of children each mutation generates
      */
     public void splitPopulation(){
-        population.subList(0,POPULATION_SIZE/MUTATION_RATE).clear();
+        population.subList(0,(POPULATION_SIZE-(POPULATION_SIZE/MUTATION_RATE))).clear();
     }
 
     /**
      * Sorts the population based on the fitness value of each puzzle
      */
     public void sortPopulation(){
-        population.sort(Comparator.comparing(Puzzle::getFitness));
+        population.sort(Comparator.comparing(Puzzle::getPuzzleFitness));
     }
 
     /**
@@ -124,25 +69,17 @@ public class  Solver {
             for (int i = 0; i < MUTATION_RATE-1; i++) {
                 Puzzle newPop = new Puzzle(p);
                 mutatePuzzle(newPop);
-                newPop.updateFitness();
+                updateFitness(newPop);
                 popAdditions.add(newPop);
             }
             mutatePuzzle(p);
-            p.updateFitness();
+            updateFitness(p);
         }
+        if (population.size() % 2 != 0) {population.add(new Puzzle(population.get(population.size()-1)));}
         population.addAll(popAdditions);
     }
 
-    /**
-     * Repairs each puzzle in the population
-     */
-    public void repairPopulation(){
-        for (Puzzle p: population) {
-            while (!isPuzzleFeasible(p)) {
-                repairPuzzle(p);
-            }
-        }
-    }
+
 
 
     /**
@@ -168,6 +105,13 @@ public class  Solver {
     }
 
 
+    /**
+     * Updates the fitness value of the puzzle
+     */
+    public void updateFitness(Puzzle puzzle){
+        puzzle.setPuzzleFitness((puzzle.getPuzzleSize() * puzzle.getPuzzleSize()) - puzzle.getEmptySpaces().size());
+    }
+
 
 
     /**
@@ -181,21 +125,6 @@ public class  Solver {
 
     // Look at different coordinate violations, take the highest violation count and remove that from the puzzle
 
-    /**
-     * For the puzzle, looks at the violations and replaces the most repeated violation that isn't in the starting puzzle with 0
-     * @param p Puzzle being repaired
-     */
-    public void repairPuzzle(Puzzle p){
-        ArrayList<int[]> violations = p.sortViolations();
-        int rowVal,colVal;
-        for (int i = violations.size()-1; i >= 0; i--) {
-            rowVal = violations.get(i)[0];
-            colVal = violations.get(i)[1];
-            if (!isSpacePermanent(rowVal,colVal)) {
-                p.setSpaceValue(0,rowVal,colVal);
-            }
-        }
-    }
 
 
 
@@ -258,26 +187,21 @@ public class  Solver {
         }
     }
 
-    private Puzzle loadPopulation(Scanner scanner) throws FileNotFoundException {
-        System.out.println("Enter name of valid puzzle file");
-        int puzzleSize = 2;
-        int[] puzzleInput = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-        File puzzleDoc = new File(scanner.nextLine());
-        if (puzzleDoc.exists()) {
-            Scanner fileReader = new Scanner(puzzleDoc);
-            ArrayList<Integer> intBuffer = new ArrayList<>();
-            while (fileReader.hasNextInt()) {
-                intBuffer.add(fileReader.nextInt());
-            }
-            puzzleSize = intBuffer.size();
-            if (intBuffer.contains(Math.sqrt(puzzleSize) + 1)) {
+    public Puzzle loadPopulation(String fileName, int puzzleSize) throws FileNotFoundException {
 
+        File puzzleDoc = new File(fileName);
+        if (puzzleDoc.exists()) {
+            Scanner scanner = new Scanner(puzzleDoc);
+            int[] intBuffer = new int[puzzleSize*puzzleSize];
+            for (int i = 0; i < (puzzleSize*puzzleSize); i++) {
+                intBuffer[i] = scanner.nextInt();
             }
-            fileReader.close();
+            Puzzle puzzle = new Puzzle(puzzleSize,intBuffer);
+            setInitialState(puzzle);
+            return puzzle;
+
         }
-        Puzzle puzzle = new Puzzle(puzzleSize,puzzleInput);
-        setInitialState(puzzle);
-        return puzzle;
+        return null;
     }
 
 

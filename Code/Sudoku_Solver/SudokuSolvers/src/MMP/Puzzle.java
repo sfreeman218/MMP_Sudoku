@@ -33,7 +33,6 @@ public class Puzzle {
          }
       }
       gridSize = (int) Math.sqrt(puzzleSize);
-      updateFitness();
    }
 
    /**
@@ -48,7 +47,7 @@ public class Puzzle {
             puzzleSpace[i][j] = initialPuzzle.getPuzzleSpace()[i][j];
          }
       }
-      puzzleFitness = initialPuzzle.getFitness();
+      puzzleFitness = initialPuzzle.getPuzzleFitness();
       this.gridSize = initialPuzzle.gridSize;
    }
 
@@ -232,11 +231,11 @@ public class Puzzle {
 
    /**
     * Counts the number of violations for each coordinate
-    * @param violationArray The ArrayList of violation coordinates
     * @return An ArrayList of coordinates with their violation totals
     */
-   public ArrayList<int[]> countViolations(ArrayList<int[]> violationArray){
+   public ArrayList<int[]> countViolations(){
       int location;
+      ArrayList<int[]> violationArray = getAllViolations();
       ArrayList<int[]> totalViolationsArray = new ArrayList<>();
       for (int[] value:violationArray) {
          location = doesViolationExist(value,totalViolationsArray);
@@ -257,7 +256,7 @@ public class Puzzle {
     * @return Sorted ArrayList of int[] of violations
     */
    public ArrayList<int[]> sortViolations(){
-      ArrayList<int[]> violationArray = countViolations(getAllViolations());
+      ArrayList<int[]> violationArray = countViolations();
       violationArray.sort(Comparator.comparing(a->a[2]));
       return violationArray;
    }
@@ -301,20 +300,20 @@ public class Puzzle {
    }
 
    /**
-    * Updates the fitness value of the puzzle
+    * Sets fitness value
+    * @param fitness new value for the fitness
     */
-   public void updateFitness(){
-      puzzleFitness = (puzzleSize * puzzleSize) - getEmptySpaces().size();
+   public void setPuzzleFitness(int fitness){
+      puzzleFitness = fitness;
    }
 
    /**
-    * Gets the fitness of a puzzle
-    * @return int value of the fitness
+    * Gets the puzzles fitness
+    * @return Int value representing the fitness
     */
-   public int getFitness(){
+   public int getPuzzleFitness(){
       return puzzleFitness;
    }
-
 
    @Override
    public String toString() {
