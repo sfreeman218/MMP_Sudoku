@@ -20,8 +20,8 @@ public class RepairBasedSolver extends Solver{
      * @param p Puzzle being repaired
      */
     public void repairPuzzle(Puzzle p){
-        //ArrayList<int[]> violations = p.sortViolations();
-        ArrayList<int[]> violations = p.countViolations();
+        ArrayList<int[]> violations = p.sortViolations();
+        //ArrayList<int[]> violations = p.countViolations();
         int rowVal,colVal;
         for (int i = violations.size()-1; i >= 0; i--) {
             rowVal = violations.get(i)[0];
