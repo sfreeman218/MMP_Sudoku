@@ -2,6 +2,11 @@ package MMP;
 
 import java.util.ArrayList;
 
+/**
+ * @author Sam David Freeman sdf2@aber.ac.uk
+ * @version 0.2
+ * Hybrid Repair Solver Class used to take in and solve valid formatted sudoku puzzles
+ */
 public class RepairBasedSolver extends Solver{
 
     /**

@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.1
+ * @version 0.2
  * Solver Class used to take in and solve valid formatted sudoku puzzles
  */
 
@@ -19,7 +19,7 @@ public class  Solver {
     public int[] getSolution(Puzzle p){return null;}
 
     public static final int LOOP_SIZE = 100000;
-    public static final int POPULATION_SIZE = 10000;
+    public static final int POPULATION_SIZE = 100;
     public static final int MUTATION_RATE = 2;
 
 
@@ -57,7 +57,7 @@ public class  Solver {
      * Sorts the population based on the fitness value of each puzzle
      */
     public void sortPopulation(){
-        population.sort(Comparator.comparing(Puzzle::getPuzzleFitness));
+        population.sort(Comparator.comparing(a->a.getPuzzleFitness()[0]));
     }
 
     /**
@@ -109,7 +109,7 @@ public class  Solver {
      * Updates the fitness value of the puzzle
      */
     public void updateFitness(Puzzle puzzle){
-        puzzle.setPuzzleFitness((puzzle.getPuzzleSize() * puzzle.getPuzzleSize()) - puzzle.getEmptySpaces().size());
+        puzzle.setPuzzleFitness(new int[] {(puzzle.getPuzzleSize() * puzzle.getPuzzleSize()) - puzzle.getEmptySpaces().size()});
     }
 
 
@@ -196,7 +196,7 @@ public class  Solver {
             for (int i = 0; i < (puzzleSize*puzzleSize); i++) {
                 intBuffer[i] = scanner.nextInt();
             }
-            Puzzle puzzle = new Puzzle(puzzleSize,intBuffer);
+            Puzzle puzzle = new Puzzle(puzzleSize,intBuffer,1);
             setInitialState(puzzle);
             return puzzle;
 
@@ -212,7 +212,7 @@ public class  Solver {
         for (int i = 0; i < puzzleInput.length; i++) {
             puzzleInput[i] = scanner.nextInt();
         }
-        Puzzle puzzle = new Puzzle(size,puzzleInput);
+        Puzzle puzzle = new Puzzle(size,puzzleInput,1);
         setInitialState(puzzle);
         return puzzle;
     }

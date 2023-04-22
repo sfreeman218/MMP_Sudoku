@@ -1,12 +1,25 @@
 package MMP;
 
+/**
+ * @author Sam David Freeman sdf2@aber.ac.uk
+ * @version 0.1
+ * Multi objective solver Class used to take in and solve valid formatted sudoku puzzles, inherits from solver class
+ */
 public class MultiObjectiveSolver extends Solver{
 
+
+    public void sortPopulation(){
+
+    }
+
+    public Boolean compareFitness(Puzzle f, Puzzle g){
+        return ((f.getPuzzleFitness()[0] >= g.getPuzzleFitness()[0]) && (f.getPuzzleFitness()[1] >= g.getPuzzleFitness()[1]) && ((f.getPuzzleFitness()[0] != g.getPuzzleFitness()[0]) || (f.getPuzzleFitness()[1] != g.getPuzzleFitness()[1])));
+    }
 
     public void updateFitness(Puzzle puzzle){
         int squaresFilled = (puzzle.getPuzzleSize() * puzzle.getPuzzleSize()) - puzzle.getEmptySpaces().size();
         int violations = ((puzzle.getPuzzleSize()*puzzle.getPuzzleSize()) -puzzle.getAllViolations().size());
-        puzzle.setPuzzleFitness((squaresFilled+violations)/2);
+        puzzle.setPuzzleFitness(new int[] {squaresFilled,violations});
     }
 
     public int[] getSolution(Puzzle puzzle){

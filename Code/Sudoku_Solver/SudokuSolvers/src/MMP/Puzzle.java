@@ -14,7 +14,7 @@ public class Puzzle {
    private int[][] puzzleSpace;
    private final int puzzleSize;
    private final int gridSize;
-   private int puzzleFitness;
+   private int[] puzzleFitness;
 
 
    /**
@@ -22,9 +22,10 @@ public class Puzzle {
     * @param size The length or width of the puzzle
     * @param numbers The starting numbers of the puzzle
     */
-   public Puzzle(int size, int[] numbers){
+   public Puzzle(int size, int[] numbers, int numOfObjectives){
       puzzleSize = size;
       puzzleSpace = new int[size][size];
+      puzzleFitness = new int[numOfObjectives];
       int total = 0;
       for (int i=0; i < puzzleSize; i++){
          for (int j = 0; j < puzzleSize; j++) {
@@ -303,7 +304,7 @@ public class Puzzle {
     * Sets fitness value
     * @param fitness new value for the fitness
     */
-   public void setPuzzleFitness(int fitness){
+   public void setPuzzleFitness(int[] fitness){
       puzzleFitness = fitness;
    }
 
@@ -311,7 +312,7 @@ public class Puzzle {
     * Gets the puzzles fitness
     * @return Int value representing the fitness
     */
-   public int getPuzzleFitness(){
+   public int[] getPuzzleFitness(){
       return puzzleFitness;
    }
 
