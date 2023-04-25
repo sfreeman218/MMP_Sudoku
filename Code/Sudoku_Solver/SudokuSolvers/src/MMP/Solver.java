@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.2
+ * @version 0.3
  * Solver Class used to take in and solve valid formatted sudoku puzzles
  */
 
@@ -26,6 +26,8 @@ public class  Solver {
 
     protected ArrayList<Puzzle> population = new ArrayList<>();
     protected ArrayList<int[]> initialCoordinates;
+
+    protected ArrayList<Puzzle> mutatedPopulation;
 
     public Solver(){
 
@@ -50,14 +52,25 @@ public class  Solver {
      * Splits the population based on the population size divided by the number of children each mutation generates
      */
     public void splitPopulation(){
-        population.subList(0,(POPULATION_SIZE-(POPULATION_SIZE/MUTATION_RATE))).clear();
+
+        for (int i = 0; i < POPULATION_SIZE; i++) {
+            if (population.get(i).getPuzzleFitness()[0] < mutatedPopulation.get(i).getPuzzleFitness()[0]) {
+                population.set(i,mutatedPopulation.get(i));
+            }
+        }
+        mutatedPopulation = null;
+        sortPopulation(population);
+        /*population.addAll(mutatedPopulation);
+        sortPopulation(population);
+        population = new ArrayList<>(population.subList(99,199));
+        mutatedPopulation = null;*/
     }
 
     /**
      * Sorts the population based on the fitness value of each puzzle
      */
-    public void sortPopulation(){
-        population.sort(Comparator.comparing(a->a.getPuzzleFitness()[0]));
+    public void sortPopulation(ArrayList<Puzzle> pop){
+        pop.sort(Comparator.comparing(a->a.getPuzzleFitness()[0]));
     }
 
     /**
@@ -72,11 +85,8 @@ public class  Solver {
                 updateFitness(newPop);
                 popAdditions.add(newPop);
             }
-            mutatePuzzle(p);
-            updateFitness(p);
         }
-        if (population.size() % 2 != 0) {population.add(new Puzzle(population.get(population.size()-1)));}
-        population.addAll(popAdditions);
+        mutatedPopulation = popAdditions;
     }
 
 

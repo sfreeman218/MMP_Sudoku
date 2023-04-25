@@ -2,7 +2,7 @@ package MMP;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.1
+ * @version 0.2
  * Multi objective solver Class used to take in and solve valid formatted sudoku puzzles, inherits from solver class
  */
 public class MultiObjectiveSolver extends Solver{
@@ -25,23 +25,31 @@ public class MultiObjectiveSolver extends Solver{
     public int[] getSolution(Puzzle puzzle){
         generatePopulation(puzzle);
         int counter = 0;
-        boolean puzzleComplete = isPuzzleComplete();
-        if (!puzzleComplete) {
-            while (counter < LOOP_SIZE && !puzzleComplete) {
-                counter++;
-                sortPopulation();
-                System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getPuzzleFitness() + " Worst fitness value = " + population.get(0).getPuzzleFitness());
-                splitPopulation();
-                puzzleComplete = isPuzzleComplete();
 
-                if (!puzzleComplete) {
+        if (!isPuzzleComplete()) {
+            while (counter < LOOP_SIZE && !isPuzzleComplete()) {
+                counter++;
+                if (!isPuzzleComplete()) {
                     mutatePopulation();
                 }
+                splitPopulation();
+                System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getPuzzleFitness()[0] + "," + population.get(population.size()-1).getPuzzleFitness()[1] + " Worst fitness value = " + + population.get(0).getPuzzleFitness()[0] + "," + population.get(0).getPuzzleFitness()[1]);
+
             }
         }
-        if (puzzleComplete){
+        if (isPuzzleComplete()){
             return new int[]{counter};
         }
         else {System.out.println("Program did not find a viable solution"); return null;}
+    }
+
+    public void splitPopulation(){
+        for (int i = 0; i < POPULATION_SIZE; i++) {
+            if (!compareFitness(population.get(i),mutatedPopulation.get(i))) {
+                population.set(i,mutatedPopulation.get(i));
+            }
+        }
+        mutatedPopulation = null;
+        sortPopulation();
     }
 }

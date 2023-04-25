@@ -86,7 +86,7 @@ public class RepairSolverTest {
         int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
         Puzzle p = new Puzzle(4,values,1);
         solver.generatePopulation(p);
-        assertEquals(10000, solver.getPopulationSize());
+        assertEquals(100, solver.getPopulationSize());
     }
 
     @Test
@@ -95,7 +95,7 @@ public class RepairSolverTest {
         Puzzle p = new Puzzle(4,values,1);
         solver.generatePopulation(p);
         solver.splitPopulation();
-        assertEquals(5000, solver.getPopulationSize());
+        assertEquals(50, solver.getPopulationSize());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class RepairSolverTest {
         Puzzle p = new Puzzle(4,values,1);
         solver.generatePopulation(p);
         solver.mutatePopulation();
-        assertEquals(20000, solver.getPopulationSize());
+        assertEquals(200, solver.getPopulationSize());
     }
 
     @Test

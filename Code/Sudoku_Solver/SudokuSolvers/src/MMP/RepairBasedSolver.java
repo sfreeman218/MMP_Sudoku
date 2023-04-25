@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.2
+ * @version 0.3
  * Hybrid Repair Solver Class used to take in and solve valid formatted sudoku puzzles
  */
 public class RepairBasedSolver extends Solver{
@@ -12,8 +12,8 @@ public class RepairBasedSolver extends Solver{
     /**
      * Repairs each puzzle in the population
      */
-    public void repairPopulation(){
-        for (Puzzle p: population) {
+    public void repairPopulation(ArrayList<Puzzle> pop){
+        for (Puzzle p: pop) {
             while (!isPuzzleFeasible(p)) {
                 repairPuzzle(p);
             }
@@ -33,8 +33,10 @@ public class RepairBasedSolver extends Solver{
             colVal = violations.get(i)[1];
             if (!isSpacePermanent(rowVal,colVal)) {
                 p.setSpaceValue(0,rowVal,colVal);
+
             }
         }
+        updateFitness(p);
     }
 
 
@@ -44,23 +46,21 @@ public class RepairBasedSolver extends Solver{
      * @return The success of the method
      */
     public int[] getSolution(Puzzle puzzle) {
+        repairPopulation(population);
         generatePopulation(puzzle);
         int counter = 0;
-        boolean puzzleComplete = isPuzzleComplete();
-        if (!puzzleComplete) {
-            while (counter < LOOP_SIZE && !puzzleComplete) {
+        if (!isPuzzleComplete()) {
+            while (counter < LOOP_SIZE && !isPuzzleComplete()) {
                 counter++;
-                sortPopulation();
-                System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getPuzzleFitness() + " Worst fitness value = " + population.get(0).getPuzzleFitness());
-                splitPopulation();
-                repairPopulation();
-                puzzleComplete = isPuzzleComplete();
-                if (!puzzleComplete) {
+                if (!isPuzzleComplete()) {
                     mutatePopulation();
                 }
+                repairPopulation(mutatedPopulation);
+                splitPopulation();
+                System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getPuzzleFitness()[0] + " Worst fitness value = " + population.get(0).getPuzzleFitness()[0]);
             }
         }
-        if (puzzleComplete){
+        if (isPuzzleComplete()){
             return new int[]{counter};
         }
         else {System.out.println("Program did not find a viable solution"); return null;}

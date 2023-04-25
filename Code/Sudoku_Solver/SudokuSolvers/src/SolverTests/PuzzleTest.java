@@ -13,7 +13,7 @@ public class PuzzleTest {
     @BeforeEach
     void setPuzzle(){
         int[] examplePuzzle = {0,1,1,0,0,1,0,0,0,0,0,0,0,1,0,0};
-        p = new Puzzle(4,examplePuzzle);
+        p = new Puzzle(4,examplePuzzle,2);
     }
 
     @Test
