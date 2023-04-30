@@ -16,41 +16,84 @@ public class TestSolverComparison {
     public void testMultiObjSolverFor4x4() throws FileNotFoundException {
         solver = new MultiObjectiveSolver();
         int puzzleSize = 4;
-        testStart(puzzleSize,solver);
+        testStart(puzzleSize,solver,"");
     }
 
     @Test
     public void testRepairSolverFor4x4() throws FileNotFoundException {
         int puzzleSize = 4;
         solver = new RepairBasedSolver();
-        testStart(puzzleSize,solver);
+        testStart(puzzleSize,solver,"");
     }
 
     @Test
-    public void testMultiObjSolverFor9x9() throws FileNotFoundException {
+    public void testMultiObjSolverFor9x9Easy() throws FileNotFoundException {
         int puzzleSize = 9;
         solver = new MultiObjectiveSolver();
-        testStart(puzzleSize,solver);
+        testStart(puzzleSize,solver,"Easy/");
     }
 
     @Test
-    public void testRepairSolverFor9x9() throws FileNotFoundException {
+    public void testMultiObjSolverFor9x9Medium() throws FileNotFoundException {
         int puzzleSize = 9;
-        solver = new RepairBasedSolver();
-        testStart(puzzleSize,solver);
+        solver = new MultiObjectiveSolver();
+        testStart(puzzleSize,solver,"Medium/");
     }
 
-    private void testStart(int puzzleSize,Solver solver) throws FileNotFoundException {
+    @Test
+    public void testMultiObjSolverFor9x9Hard() throws FileNotFoundException {
+        int puzzleSize = 9;
+        solver = new MultiObjectiveSolver();
+        testStart(puzzleSize,solver,"Hard/");
+    }
+
+    @Test
+    public void testMultiObjSolverFor9x9Extreme() throws FileNotFoundException {
+        int puzzleSize = 9;
+        solver = new MultiObjectiveSolver();
+        testStart(puzzleSize,solver,"Extreme/");
+    }
+
+    @Test
+    public void testRepairSolverFor9x9Easy() throws FileNotFoundException {
+        int puzzleSize = 9;
+        solver = new RepairBasedSolver();
+        testStart(puzzleSize,solver,"Easy/");
+    }
+
+    @Test
+    public void testRepairSolverFor9x9Medium() throws FileNotFoundException {
+        int puzzleSize = 9;
+        solver = new RepairBasedSolver();
+        testStart(puzzleSize,solver,"Medium/");
+    }
+
+    @Test
+    public void testRepairSolverFor9x9Hard() throws FileNotFoundException {
+        int puzzleSize = 9;
+        solver = new RepairBasedSolver();
+        testStart(puzzleSize,solver,"Hard/");
+    }
+
+    @Test
+    public void testRepairSolverFor9x9Expert() throws FileNotFoundException {
+        int puzzleSize = 9;
+        solver = new RepairBasedSolver();
+        testStart(puzzleSize,solver,"Expert/");
+    }
+
+
+
+    private void testStart(int puzzleSize,Solver solver, String difficulty) throws FileNotFoundException {
         Puzzle currentPuzzle;
         String fileName;
         int[] resultsAverage;
-        for (int i = 0; i < 100; i++) {
-            fileName = i + "_" + puzzleSize;
+        for (int i = 1; i < 11; i++) {
+            fileName = puzzleSize+"x"+puzzleSize+"/" + difficulty+i+".txt";
             currentPuzzle = solver.loadPopulation(fileName,puzzleSize);
             resultsAverage = new int[2];
             for (int j = 0; j < 30; j++) {
                 resultsAverage = solver.getSolution(currentPuzzle);
-
             }
             resultsAverage[0] = resultsAverage[0]/30;
             resultsAverage[1] = resultsAverage[1]/30;
