@@ -11,10 +11,12 @@
 
 \begin{document}
 \section{Design}
-	
+
+\subsection{Requirements}
+
 \subsection{Representation of Sudoku Puzzle}
 Representing the puzzle within the program was a key issues within its creation. The representation used within this program is rather simple, for any space that has a integer value, it uses that integer, e.g. for a 9x9 puzzle it could be any number between 1 and 9. However the issues of blank spaces when trying to solve the program still remains, to deal with this I have extended the range to 0-9, where 0 represents a blank space and 1-9 represents 1-9. The integers for the puzzle are stored in a 2D array, looking very similar to an actual sudoku puzzle, as seen in figure 2.
-Due to the simplicity of the representation, it also comes with some notable issues. Namely the size of the search space that this creates for the algorithm, especially as the size of the puzzle increases. For example with a 9x9, each space has 10 potential values, with 81 spaces, that creates 
+Due to the simplicity of the representation, it also comes with some notable issues. Namely the size of the search space that this creates for the algorithm, especially as the size of the puzzle increases. 
 \subsection{Selection algorithm}
 
 \subsection{Mutation algorithm}
@@ -29,4 +31,5 @@ Due to the simplicity of the representation, it also comes with some notable iss
 
 \subsection{Fitness function}
 
+\subsection{Testing program }
 \end{document}
