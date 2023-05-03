@@ -1,0 +1,90 @@
+Try 0
+Generations:100000
+Time taken: 254961ms
+Try 1
+Generations:3055
+Time taken: 7853ms
+Try 2
+Generations:100000
+Time taken: 257093ms
+Try 3
+Generations:28173
+Time taken: 72569ms
+Try 4
+Generations:100000
+Time taken: 254551ms
+Try 5
+Generations:100000
+Time taken: 256021ms
+Try 6
+Generations:100000
+Time taken: 254874ms
+Try 7
+Generations:4791
+Time taken: 12605ms
+Try 8
+Generations:395
+Time taken: 1111ms
+Try 9
+Generations:794
+Time taken: 2193ms
+Try 10
+Generations:100000
+Time taken: 256286ms
+Try 11
+Generations:100000
+Time taken: 255929ms
+Try 12
+Generations:379
+Time taken: 1041ms
+Try 13
+Generations:100000
+Time taken: 256252ms
+Try 14
+Generations:228
+Time taken: 677ms
+Try 15
+Generations:100000
+Time taken: 254890ms
+Try 16
+Generations:100000
+Time taken: 255403ms
+Try 17
+Generations:430
+Time taken: 1193ms
+Try 18
+Generations:2073
+Time taken: 5377ms
+Try 19
+Generations:599
+Time taken: 1600ms
+Try 20
+Generations:1703
+Time taken: 4408ms
+Try 21
+Generations:100000
+Time taken: 257114ms
+Try 22
+Generations:38618
+Time taken: 98894ms
+Try 23
+Generations:13994
+Time taken: 36146ms
+Try 24
+Generations:100000
+Time taken: 256243ms
+Try 25
+Generations:5394
+Time taken: 14131ms
+Try 26
+Generations:100000
+Time taken: 256458ms
+Try 27
+Generations:279
+Time taken: 776ms
+Try 28
+Generations:100000
+Time taken: 258055ms
+Try 29
+Generations:6313
+Time taken: 16471ms

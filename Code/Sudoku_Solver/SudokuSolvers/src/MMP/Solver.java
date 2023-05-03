@@ -3,7 +3,6 @@ package MMP;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ import java.util.Scanner;
 public class  Solver {
 
 
-    public int[] getSolution(Puzzle p){return null;}
+    public int getSolution(Puzzle p){return 0;}
 
     public static final int LOOP_SIZE = 100000;
     public static final int POPULATION_SIZE = 100;
@@ -51,42 +50,24 @@ public class  Solver {
     /**
      * Splits the population based on the population size divided by the number of children each mutation generates
      */
+
     public void splitPopulation(){
 
-        for (int i = 0; i < POPULATION_SIZE; i++) {
-            if (population.get(i).getPuzzleFitness()[0] < mutatedPopulation.get(i).getPuzzleFitness()[0]) {
-                population.set(i,mutatedPopulation.get(i));
-            }
-        }
-        mutatedPopulation = null;
-        sortPopulation(population);
-        /*population.addAll(mutatedPopulation);
-        sortPopulation(population);
-        population = new ArrayList<>(population.subList(99,199));
-        mutatedPopulation = null;*/
     }
+
 
     /**
      * Sorts the population based on the fitness value of each puzzle
      */
     public void sortPopulation(ArrayList<Puzzle> pop){
-        pop.sort(Comparator.comparing(a->a.getPuzzleFitness()[0]));
+
     }
 
     /**
      * Mutates each puzzle into 2 new puzzles with random mutations added
      */
     public void mutatePopulation(){
-        ArrayList<Puzzle> popAdditions = new ArrayList<>();
-        for (Puzzle p: population) {
-            for (int i = 0; i < MUTATION_RATE-1; i++) {
-                Puzzle newPop = new Puzzle(p);
-                mutatePuzzle(newPop);
-                updateFitness(newPop);
-                popAdditions.add(newPop);
-            }
-        }
-        mutatedPopulation = popAdditions;
+
     }
 
 
@@ -96,7 +77,7 @@ public class  Solver {
      * Mutates puzzle by adding random number to an empty space if one is available or filled space that is not permanent otherwise
      * @param puzzle Puzzle being mutated
      */
-    private void mutatePuzzle(Puzzle puzzle) {
+    protected void mutatePuzzle(Puzzle puzzle) {
         ArrayList<int[]> emptySpaces = puzzle.getEmptySpaces();
         Random rand = new Random();
         int[] space;

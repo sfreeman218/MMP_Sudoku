@@ -1,0 +1,240 @@
+File 1:
+Failure: 0
+Average Generations: 15
+Average time: 14ms
+Average time with failure: 14ms
+File 2:
+Failure: 0
+Average Generations: 10
+Average time: 8ms
+Average time with failure: 8ms
+File 3:
+Failure: 0
+Average Generations: 7
+Average time: 5ms
+Average time with failure: 5ms
+File 4:
+Failure: 0
+Average Generations: 10
+Average time: 7ms
+Average time with failure: 7ms
+File 5:
+Failure: 0
+Average Generations: 9
+Average time: 6ms
+Average time with failure: 6ms
+File 6:
+Failure: 0
+Average Generations: 9
+Average time: 6ms
+Average time with failure: 6ms
+File 7:
+Failure: 0
+Average Generations: 9
+Average time: 6ms
+Average time with failure: 6ms
+File 8:
+Failure: 0
+Average Generations: 12
+Average time: 7ms
+Average time with failure: 7ms
+File 9:
+Failure: 0
+Average Generations: 7
+Average time: 4ms
+Average time with failure: 4ms
+File 10:
+Failure: 0
+Average Generations: 13
+Average time: 10ms
+Average time with failure: 10ms
+File 1:
+Failure: 0
+Average Generations: 13
+Average time: 158ms
+Average time with failure: 158ms
+File 2:
+Failure: 0
+Average Generations: 10
+Average time: 26ms
+Average time with failure: 26ms
+File 3:
+Failure: 0
+Average Generations: 6
+Average time: 11ms
+Average time with failure: 11ms
+File 4:
+Failure: 0
+Average Generations: 9
+Average time: 23ms
+Average time with failure: 23ms
+File 5:
+Failure: 0
+Average Generations: 8
+Average time: 14ms
+Average time with failure: 14ms
+File 6:
+Failure: 0
+Average Generations: 8
+Average time: 15ms
+Average time with failure: 15ms
+File 7:
+Failure: 0
+Average Generations: 8
+Average time: 16ms
+Average time with failure: 16ms
+File 8:
+Failure: 0
+Average Generations: 9
+Average time: 23ms
+Average time with failure: 23ms
+File 9:
+Failure: 0
+Average Generations: 6
+Average time: 9ms
+Average time with failure: 9ms
+File 10:
+Failure: 0
+Average Generations: 11
+Average time: 44ms
+Average time with failure: 44ms
+File 1:
+Failure: 0
+Average Generations: 12
+Average time: 47ms
+Average time with failure: 47ms
+File 2:
+Failure: 0
+Average Generations: 9
+Average time: 31ms
+Average time with failure: 31ms
+File 3:
+Failure: 0
+Average Generations: 6
+Average time: 21ms
+Average time with failure: 21ms
+File 4:
+Failure: 0
+Average Generations: 9
+Average time: 29ms
+Average time with failure: 29ms
+File 5:
+Failure: 0
+Average Generations: 7
+Average time: 25ms
+Average time with failure: 25ms
+File 6:
+Failure: 0
+Average Generations: 7
+Average time: 25ms
+Average time with failure: 25ms
+File 7:
+Failure: 0
+Average Generations: 7
+Average time: 26ms
+Average time with failure: 26ms
+File 8:
+Failure: 0
+Average Generations: 9
+Average time: 28ms
+Average time with failure: 28ms
+File 9:
+Failure: 0
+Average Generations: 6
+Average time: 19ms
+Average time with failure: 19ms
+File 10:
+Failure: 0
+Average Generations: 11
+Average time: 35ms
+Average time with failure: 35ms
+File 1:
+Failure: 0
+Average Generations: 15
+Average time: 14ms
+Average time with failure: 14ms
+File 1:
+Failure: 0
+Average Generations: 15
+Average time: 14ms
+Average time with failure: 14ms
+File 2:
+Failure: 0
+Average Generations: 10
+Average time: 8ms
+Average time with failure: 8ms
+File 3:
+Failure: 0
+Average Generations: 7
+Average time: 5ms
+Average time with failure: 5ms
+File 4:
+Failure: 0
+Average Generations: 10
+Average time: 7ms
+Average time with failure: 7ms
+File 5:
+Failure: 0
+Average Generations: 8
+Average time: 5ms
+Average time with failure: 5ms
+File 6:
+Failure: 0
+Average Generations: 8
+Average time: 5ms
+Average time with failure: 5ms
+File 7:
+Failure: 0
+Average Generations: 9
+Average time: 5ms
+Average time with failure: 5ms
+File 1:
+Failure: 0
+Average Generations: 14
+Average time: 14ms
+Average time with failure: 14ms
+File 2:
+Failure: 0
+Average Generations: 10
+Average time: 7ms
+Average time with failure: 7ms
+File 3:
+Failure: 0
+Average Generations: 7
+Average time: 5ms
+Average time with failure: 5ms
+File 4:
+Failure: 0
+Average Generations: 10
+Average time: 6ms
+Average time with failure: 6ms
+File 5:
+Failure: 0
+Average Generations: 8
+Average time: 5ms
+Average time with failure: 5ms
+File 6:
+Failure: 0
+Average Generations: 8
+Average time: 5ms
+Average time with failure: 5ms
+File 7:
+Failure: 0
+Average Generations: 9
+Average time: 5ms
+Average time with failure: 5ms
+File 8:
+Failure: 0
+Average Generations: 11
+Average time: 6ms
+Average time with failure: 6ms
+File 9:
+Failure: 0
+Average Generations: 7
+Average time: 4ms
+Average time with failure: 4ms
+File 10:
+Failure: 0
+Average Generations: 13
+Average time: 8ms
+Average time with failure: 8ms

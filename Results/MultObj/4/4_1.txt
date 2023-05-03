@@ -1,0 +1,90 @@
+Try 0
+Generations:85
+Time taken: 130ms
+Try 1
+Generations:72
+Time taken: 76ms
+Try 2
+Generations:38
+Time taken: 63ms
+Try 3
+Generations:61
+Time taken: 82ms
+Try 4
+Generations:72
+Time taken: 89ms
+Try 5
+Generations:96
+Time taken: 94ms
+Try 6
+Generations:73
+Time taken: 80ms
+Try 7
+Generations:28
+Time taken: 36ms
+Try 8
+Generations:87
+Time taken: 92ms
+Try 9
+Generations:84
+Time taken: 84ms
+Try 10
+Generations:89
+Time taken: 90ms
+Try 11
+Generations:101
+Time taken: 102ms
+Try 12
+Generations:97
+Time taken: 103ms
+Try 13
+Generations:94
+Time taken: 76ms
+Try 14
+Generations:85
+Time taken: 75ms
+Try 15
+Generations:102
+Time taken: 98ms
+Try 16
+Generations:66
+Time taken: 64ms
+Try 17
+Generations:46
+Time taken: 42ms
+Try 18
+Generations:78
+Time taken: 74ms
+Try 19
+Generations:87
+Time taken: 87ms
+Try 20
+Generations:105
+Time taken: 94ms
+Try 21
+Generations:56
+Time taken: 52ms
+Try 22
+Generations:79
+Time taken: 73ms
+Try 23
+Generations:34
+Time taken: 29ms
+Try 24
+Generations:95
+Time taken: 84ms
+Try 25
+Generations:97
+Time taken: 119ms
+Try 26
+Generations:66
+Time taken: 60ms
+Try 27
+Generations:68
+Time taken: 77ms
+Try 28
+Generations:72
+Time taken: 75ms
+Try 29
+Generations:95
+Time taken: 83ms

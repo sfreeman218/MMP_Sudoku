@@ -1,0 +1,5 @@
+File 1:
+Failure: 21
+Average Generations: 40187
+Average time: 185633ms
+Average time with failure: 362656ms

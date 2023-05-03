@@ -1,5 +1,7 @@
 package MMP;
 
+import java.util.ArrayList;
+
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
  * @version 0.2
@@ -7,10 +9,6 @@ package MMP;
  */
 public class MultiObjectiveSolver extends Solver{
 
-
-    public void sortPopulation(){
-
-    }
 
     public Boolean compareFitness(Puzzle f, Puzzle g){
         return ((f.getPuzzleFitness()[0] >= g.getPuzzleFitness()[0]) && (f.getPuzzleFitness()[1] >= g.getPuzzleFitness()[1]) && ((f.getPuzzleFitness()[0] != g.getPuzzleFitness()[0]) || (f.getPuzzleFitness()[1] != g.getPuzzleFitness()[1])));
@@ -22,7 +20,7 @@ public class MultiObjectiveSolver extends Solver{
         puzzle.setPuzzleFitness(new int[] {squaresFilled,violations});
     }
 
-    public int[] getSolution(Puzzle puzzle){
+    public int getSolution(Puzzle puzzle){
         generatePopulation(puzzle);
         int counter = 0;
 
@@ -33,14 +31,14 @@ public class MultiObjectiveSolver extends Solver{
                     mutatePopulation();
                 }
                 splitPopulation();
-                System.out.println("Current generation " + counter + "\nBest fitness value = " + population.get(population.size()-1).getPuzzleFitness()[0] + "," + population.get(population.size()-1).getPuzzleFitness()[1] + " Worst fitness value = " + + population.get(0).getPuzzleFitness()[0] + "," + population.get(0).getPuzzleFitness()[1]);
 
             }
         }
-        if (isPuzzleComplete()){
-            return new int[]{counter};
+        if (!isPuzzleComplete()) {
+            System.out.println("Program did not find a viable solution");
         }
-        else {System.out.println("Program did not find a viable solution"); return null;}
+        population.clear();
+        return counter;
     }
 
     public void splitPopulation(){
@@ -50,6 +48,28 @@ public class MultiObjectiveSolver extends Solver{
             }
         }
         mutatedPopulation = null;
-        sortPopulation();
     }
+
+
+    /**
+     * Mutates each puzzle into 2 new puzzles with random mutations added
+     */
+    public void mutatePopulation(){
+        ArrayList<Puzzle> popAdditions = new ArrayList<>();
+        for (Puzzle p: population) {
+            for (int i = 0; i < MUTATION_RATE-1; i++) {
+                Puzzle newPop = new Puzzle(p);
+                mutatePuzzle(newPop);
+                updateFitness(newPop);
+                popAdditions.add(newPop);
+            }
+        }
+        mutatedPopulation = popAdditions;
+    }
+
+
+
+
+
+
 }
