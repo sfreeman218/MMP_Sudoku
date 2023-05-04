@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.4)  3 MAY 2023 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.4)  3 MAY 2023 16:15
 entering extended mode
 **./ExperimentDetail_section.tex
 (ExperimentDetail_section.tex
@@ -62,20 +62,20 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 ) (ExperimentDetail_section.aux)
 \openout1 = `ExperimentDetail_section.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 (C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -98,51 +98,51 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
 [1
 
 {C:/Users/sfree/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+<../Diagrams/hybridRepairFlowchart.png, id=8, 776.9025pt x 480.79625pt>
+File: ../Diagrams/hybridRepairFlowchart.png Graphic file (type png)
+<use ../Diagrams/hybridRepairFlowchart.png>
+Package pdftex.def Info: ../Diagrams/hybridRepairFlowchart.png  used on input l
+ine 41.
+(pdftex.def)             Requested size: 227.61945pt x 142.2665pt.
+<../Diagrams/multiobjectiveFlowchart.png, id=10, 693.59125pt x 420.57124pt>
+File: ../Diagrams/multiobjectiveFlowchart.png Graphic file (type png)
+<use ../Diagrams/multiobjectiveFlowchart.png>
+Package pdftex.def Info: ../Diagrams/multiobjectiveFlowchart.png  used on input
+ line 49.
+(pdftex.def)             Requested size: 227.61581pt x 142.26074pt.
 
-LaTeX Warning: File `hybridRepairFlowchart.png' not found on input line 40.
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-! Package pdftex.def Error: File `hybridRepairFlowchart.png' not found: using d
-raft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.40 	\includegraphics{hybridRepairFlowchart.png}
-                                                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[2] [3] (ExperimentDetail_section.aux) ) 
+[2 <../Diagrams/hybridRepairFlowchart.png>] [3 <../Diagrams/multiobjectiveFlowc
+hart.png>] (ExperimentDetail_section.aux) ) 
 Here is how much of TeX's memory you used:
- 1260 strings out of 479799
- 19746 string characters out of 2869723
- 293773 words of memory out of 3000000
- 18280 multiletter control sequences out of 15000+200000
- 537107 words of font info for 36 fonts, out of 3000000 for 9000
+ 1255 strings out of 479799
+ 19928 string characters out of 2869723
+ 293785 words of memory out of 3000000
+ 18277 multiletter control sequences out of 15000+200000
+ 536939 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,4n,72p,1300b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\sfree\AppData\Local\MiKTeX\f
-onts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/sfree/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sfree/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/sfree/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ExperimentDetail_section.pdf (3 pages, 58533 bytes).
+ 66i,6n,72p,1300b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\sfree\AppData\Local\MiKTe
+X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/sfree/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sfree/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on ExperimentDetail_section.pdf (3 pages, 72030 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 30 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

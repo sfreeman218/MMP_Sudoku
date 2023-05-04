@@ -8,12 +8,13 @@
 \setlength{\topmargin}{-15mm}
 \setlength{\textheight}{240mm}
 
+\graphicspath{./Diagrams}
 
 \begin{document}
 
 \section{Experiment methods}
 
-\subsection{Experiment 1 1}
+\subsection{Experiment 1}
 There are two distinct algorithms being used in this project, the Hybrid Repair and the Multi-objective algorithm. These two algorithms both have there strengths and weaknesses and whilst not the ideal choice for solving sudoku, one of these methods might be better than the other. So the question becomes: 
 \begin{itemize} 
      \item How does a hybrid repair EA algorithm compare to a Multi-objective EA? 
@@ -33,34 +34,25 @@ For the first question, looking at a mapped graph displaying difficulty against 
 
 \subsection{Approach for Hybrid Repair method}
 
-The idea for the hybrid method is, firstly much like a normal EA the population of the puzzle is created , this will be generated from several intial variations on the initial sudoku puzzle given. The next step is sorting and selection, this will take the population, sort them based on their fitness values and then removes half the puzzles from the population. The remaining members of the population would then mutate, creating a mutated child, pushing the population back to the intended size and mutating itself. After this the repair algorithm, looks at every member of the population that is currently breaking one of the games rules and brings it back into the range of a feasible solution. The final step is updating the fitness values of the population and if there are no violations and no empty spaces in any puzzle population, or alternatively the algorithm has reached the maximum number of generations, it returns the solution and ends, otherwise it will loop back to sorting and selecting step.
-
+The idea for the hybrid method is, firstly much like a normal EA the population of the puzzle is created , this will be generated from many starting mutations on the initial sudoku puzzle given. The next step is a loop, that if there are no violations and no empty spaces in any puzzle population, or alternatively the algorithm has reached the maximum number of generations, ends the loop and returns the solution if there is one, otherwise the rest of the steps are taken, all of which are contained within this loop. The next step is sorting and selection, this will take the population, sort them based on their fitness values and then removes half the puzzles from the population. The remaining members of the population would then mutate, creating a mutated child, pushing the population back to the intended size and mutating itself. After this the repair algorithm, looks at every member of the population that is currently breaking one of the games rules and brings it back into the range of a feasible solution. The final step is updating the fitness values of the population, and then loops back to the decision.
 \begin{figure}[h]
 	\caption{Flow diagram for Hybrid repair method}
-	\includegraphics{hybridRepairFlowchart.png}
+	\centering
+	\includegraphics[height=5cm, width=8cm]{./Diagrams/hybridRepairFlowchart}
 \end{figure}
-
 \subsection{Approach for Multi-objective method}
-generate population
-is puzzle complete and not over generation limit
-mutate population
-split each mutated against its parent using specific comparison function
-fitness based on both number of squares and number of violations
+The idea for the multi-objective method starts the same as the hybrid method, with generating the population of the puzzle. The next step is once again the same as for the hybrid repair method, the loop which ends if there are no violations and no empty spaces left in the puzzle or the maximum number of generations, and returns the solution if one was found. The next step is then mutating the puzzle, which in this algorithm, creates a copy set of children from the full population, mutates the children and then updates the fitness value of the children. The selection function now creates a new population, which is made from a combination of the two old populations, with the best between each parent and child pair being added to the new population.  
 
-
-
-flow diagram for approach here
-\subsection{Alternatives}
-Originally both programs were to use methods close to the current algorithm used for the hybrid algorithms approach,
+\begin{figure}[h]
+	\caption{Flow diagram for Multi-objective method}
+	\centering
+	\includegraphics[height=5cm,width=8cm]{./Diagrams/multiobjectiveFlowchart}
+\end{figure}
+\newpage
 \subsection{Experiment design}
-The experiment program  
-for method type
-load each puzzle
-test it 30 times collect times and generations for each time
-calculate averages and failures for each puzzle
-write results to files
 
-The data set is then processed in R, using 
+The experiment, program will go over a set of 10 puzzles in a folder. For each puzzle in the dataset, it will loop through and solve each program storing the generations and time taken for each puzzle in an output file specific for that puzzle. Once all 30 runs of the solver have been done, the averages for the program can be calculated, the averages will not include failed attempts, as this will massively change the results and averages for successful runs. The failures will also be calculated and with the averages be added to a file specific to the puzzle size and difficulty. These results can then be processed using R, to create more meaningful data.
+ 
 \subsection{Tools}
 The programs used in this project are coded in Java 18, and are written in the IntelliJ IDEA IDE development environment. This is due to familiarity with the language and development environment. Within the development the use 3rd party library through Maven, JUnit was needed, to test individual features and functions of certain key methods, including ones listed in the requirements(see Chapter 3.1). GitHub was used as a version control tool and also used for project management , this was necessary as it allowed for a backup file system, which can be added to from different places, as well as providing a feature which can be used as a kanban board(mentioned in 1.4).
 The statistical analysis needed for the experiments use the programming language R to perform the tests and produce graphs based on the data produced. texStudio and LaTeX were used in the creation of documentation providing a way to structure and document the final report for the project. The diagrams used in the documentation, were created using the tool draw.io, created diagrams visually explaining concepts, flowcharts used to show the basic outline of the program and class diagrams detailing each part of the project. 
