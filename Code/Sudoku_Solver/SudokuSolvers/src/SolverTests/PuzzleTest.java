@@ -88,7 +88,6 @@ public class PuzzleTest {
 
     @Test
     public void doesCountViolations(){
-        ArrayList<int[]> violation = p.getColumnViolations(1);
         ArrayList<int[]> correctViolation = new ArrayList<>();
         correctViolation.add(new int[]{1,1,2});
         correctViolation.add(new int[]{3,1,2});

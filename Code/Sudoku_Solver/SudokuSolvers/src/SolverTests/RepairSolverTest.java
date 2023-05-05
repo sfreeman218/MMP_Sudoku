@@ -117,15 +117,21 @@ public class RepairSolverTest {
     }
 
     @Test
-    public void isChangeableSpacesCorrect(){
-        ArrayList<int[]> spaces = new ArrayList<>();
-        spaces.add(new int[]{});
+    public void isInitialCoordsCorrect(){
+        int[] values = {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        Puzzle p = new Puzzle(4,values,1);
+        solver.setInitialState(p);
+        assertTrue(solver.isSpacePermanent(0,0));
+        assertFalse(solver.isSpacePermanent(1,0));
     }
 
     @Test
-    public void isInitialCoordsCorrect(){
-
+    public void isFitnessUpdated(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values,1);
+        p.setSpaceValue(1,0,0);
+        solver.updateFitness(p);
+        assertEquals(6,p.getPuzzleFitness()[0]);
     }
-
 
 }

@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.4)  3 MAY 2023 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  4 MAY 2023 12:41
 entering extended mode
 **./ExperimentDetail_section.tex
 (ExperimentDetail_section.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-10-27> xparse <2020-03-03>
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
 File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count175
@@ -21,7 +21,7 @@ File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count183
 \float@exts=\toks15
@@ -29,33 +29,31 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks16
 \@floatcapt=\box48
 )
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
-
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
-tex.def
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
+x.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count184
 \l__pdf_internal_box=\box49
@@ -77,8 +75,7 @@ LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count185
 \scratchdimen=\dimen141
@@ -92,8 +89,8 @@ ii
 \makeMPintoPDFobject=\count190
 \everyMPtoPDFconversion=\toks19
 )
-(C:\Users\sfree\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
+e.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
@@ -109,38 +106,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
 [1
 
-{C:/Users/sfree/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-<../Diagrams/hybridRepairFlowchart.png, id=8, 776.9025pt x 480.79625pt>
+{C:/Users/Sam/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+<../Diagrams/hybridRepairFlowchart.png, id=8, 842.14626pt x 420.57124pt>
 File: ../Diagrams/hybridRepairFlowchart.png Graphic file (type png)
 <use ../Diagrams/hybridRepairFlowchart.png>
 Package pdftex.def Info: ../Diagrams/hybridRepairFlowchart.png  used on input l
 ine 41.
-(pdftex.def)             Requested size: 227.61945pt x 142.2665pt.
+(pdftex.def)             Requested size: 426.79039pt x 227.6249pt.
 <../Diagrams/multiobjectiveFlowchart.png, id=10, 693.59125pt x 420.57124pt>
 File: ../Diagrams/multiobjectiveFlowchart.png Graphic file (type png)
 <use ../Diagrams/multiobjectiveFlowchart.png>
 Package pdftex.def Info: ../Diagrams/multiobjectiveFlowchart.png  used on input
  line 49.
-(pdftex.def)             Requested size: 227.61581pt x 142.26074pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2 <../Diagrams/hybridRepairFlowchart.png>] [3 <../Diagrams/multiobjectiveFlowc
-hart.png>] (ExperimentDetail_section.aux) ) 
+(pdftex.def)             Requested size: 426.8048pt x 227.6249pt.
+ [2 <../Diagrams/hybridRepairFlowchart.png>] [3 <../Diagrams/multiobjectiveFlow
+chart.png>]
+(ExperimentDetail_section.aux) ) 
 Here is how much of TeX's memory you used:
  1255 strings out of 479799
- 19928 string characters out of 2869723
+ 19858 string characters out of 2870672
  293785 words of memory out of 3000000
  18277 multiletter control sequences out of 15000+200000
  536939 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,6n,72p,1300b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\sfree\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/sfree/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sfree/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on ExperimentDetail_section.pdf (3 pages, 72030 bytes).
+ <C:\Users\Sam\AppData\Local\MiKTeX\fonts/pk/lj
+four/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Sam/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Sam/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on ExperimentDetail_section.pdf (3 pages, 72669 bytes).
 PDF statistics:
  30 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

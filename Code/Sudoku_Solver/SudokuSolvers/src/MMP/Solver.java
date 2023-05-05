@@ -26,8 +26,10 @@ public class  Solver {
     protected ArrayList<Puzzle> population = new ArrayList<>();
     protected ArrayList<int[]> initialCoordinates;
 
-    protected ArrayList<Puzzle> mutatedPopulation;
 
+    /**
+     * Placeholder for polymorphism
+     */
     public Solver(){
 
     }
@@ -48,7 +50,7 @@ public class  Solver {
     }
 
     /**
-     * Splits the population based on the population size divided by the number of children each mutation generates
+     * Placeholder for polymorphism
      */
 
     public void splitPopulation(){
@@ -57,14 +59,14 @@ public class  Solver {
 
 
     /**
-     * Sorts the population based on the fitness value of each puzzle
+     * Placeholder for polymorphism
      */
     public void sortPopulation(ArrayList<Puzzle> pop){
 
     }
 
     /**
-     * Mutates each puzzle into 2 new puzzles with random mutations added
+     * Placeholder for polymorphism
      */
     public void mutatePopulation(){
 
@@ -97,10 +99,10 @@ public class  Solver {
 
 
     /**
-     * Updates the fitness value of the puzzle
+     * Placeholder for polymorphism
      */
     public void updateFitness(Puzzle puzzle){
-        puzzle.setPuzzleFitness(new int[] {(puzzle.getPuzzleSize() * puzzle.getPuzzleSize()) - puzzle.getEmptySpaces().size()});
+
     }
 
 
@@ -178,6 +180,14 @@ public class  Solver {
         }
     }
 
+
+    /**
+     * Loads a puzzle from a specific file
+     * @param fileName The filepath
+     * @param puzzleSize The size of the sudoku puzzle
+     * @return The puzzle that has been loaded
+     * @throws FileNotFoundException If the specified file does not exist exception is thrown
+     */
     public Puzzle loadPopulation(String fileName, int puzzleSize) throws FileNotFoundException {
 
         File puzzleDoc = new File(fileName);
@@ -188,25 +198,12 @@ public class  Solver {
                 intBuffer[i] = scanner.nextInt();
             }
             Puzzle puzzle = new Puzzle(puzzleSize,intBuffer,1);
-            setInitialState(puzzle);
             return puzzle;
 
         }
         return null;
     }
 
-
-    private Puzzle manualPuzzlePopulation() {
-        Scanner scanner = new Scanner(System.in);
-        int size = scanner.nextInt();
-        int[] puzzleInput = new int[size*size];
-        for (int i = 0; i < puzzleInput.length; i++) {
-            puzzleInput[i] = scanner.nextInt();
-        }
-        Puzzle puzzle = new Puzzle(size,puzzleInput,1);
-        setInitialState(puzzle);
-        return puzzle;
-    }
 
     /**
      * Gets the population size

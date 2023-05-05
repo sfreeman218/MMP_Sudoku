@@ -2,14 +2,13 @@ package SolverTests;
 
 import MMP.MultiObjectiveSolver;
 import MMP.Puzzle;
-import MMP.Solver;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MultiObjSolverTest {
 
-    Solver solver = new MultiObjectiveSolver();
+    MultiObjectiveSolver solver = new MultiObjectiveSolver();
 
     @Test
     public void solve4x4Puzzle(){
@@ -75,6 +74,25 @@ public class MultiObjSolverTest {
         int[] values = {4,0,0,0,3,0,0,0,1,9,0,5,0,0,7,6,2,0,0,8,0,9,0,5,0,3,0,3,0,0,0,2,1,0,0,0,0,2,0,0,8,0,0,7,4,0,1,4,0,7,6,3,9,2,7,0,8,0,1,0,2,0,9,6,9,0,0,5,4,8,1,3,0,4,0,2,0,8,0,6,0};
         Puzzle p = new Puzzle(9,values,2);
         assertNotNull(solver.getSolution(p));
+    }
+
+    @Test
+    public void doesPopulationSplit(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values,1);
+        solver.generatePopulation(p);
+        solver.mutatePopulation();
+        solver.splitPopulation();
+        assertNull(solver.getMutatedPopulation());
+    }
+
+    @Test
+    public void isPopulationMutated(){
+        int[] values = {0,0,0,2,0,0,4,0,1,0,0,0,2,0,0,3};
+        Puzzle p = new Puzzle(4,values,1);
+        solver.generatePopulation(p);
+        solver.mutatePopulation();
+        assertNotNull(solver.getMutatedPopulation());
     }
 
 }

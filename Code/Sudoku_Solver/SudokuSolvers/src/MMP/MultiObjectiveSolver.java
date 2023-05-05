@@ -9,31 +9,47 @@ import java.util.ArrayList;
  */
 public class MultiObjectiveSolver extends Solver{
 
+    private ArrayList<Puzzle> mutatedPopulation;
 
+    /**
+     * Takes two puzzles and compares their fitness
+     * @param f Puzzle 1
+     * @param g Puzzle 2
+     * @return True if puzzle f is greater, false otherwise
+     */
     public Boolean compareFitness(Puzzle f, Puzzle g){
         return ((f.getPuzzleFitness()[0] >= g.getPuzzleFitness()[0]) && (f.getPuzzleFitness()[1] >= g.getPuzzleFitness()[1]) && ((f.getPuzzleFitness()[0] != g.getPuzzleFitness()[0]) || (f.getPuzzleFitness()[1] != g.getPuzzleFitness()[1])));
     }
 
+    /**
+     * Calculates fitness values for 
+     * @param puzzle
+     */
     public void updateFitness(Puzzle puzzle){
         int squaresFilled = (puzzle.getPuzzleSize() * puzzle.getPuzzleSize()) - puzzle.getEmptySpaces().size();
         int violations = ((puzzle.getPuzzleSize()*puzzle.getPuzzleSize()) -puzzle.getAllViolations().size());
         puzzle.setPuzzleFitness(new int[] {squaresFilled,violations});
     }
 
+    /**
+     *
+     * @param puzzle
+     * @return
+     */
     public int getSolution(Puzzle puzzle){
         generatePopulation(puzzle);
         int counter = 0;
 
-        if (!isPuzzleComplete()) {
-            while (counter < LOOP_SIZE && !isPuzzleComplete()) {
-                counter++;
-                if (!isPuzzleComplete()) {
-                    mutatePopulation();
-                }
-                splitPopulation();
 
+        while (counter < LOOP_SIZE && !isPuzzleComplete()) {
+            counter++;
+            if (!isPuzzleComplete()) {
+                mutatePopulation();
             }
-        }
+                splitPopulation();
+                System.out.println(counter);
+            }
+
         if (!isPuzzleComplete()) {
             System.out.println("Program did not find a viable solution");
         }
@@ -41,6 +57,9 @@ public class MultiObjectiveSolver extends Solver{
         return counter;
     }
 
+    /**
+     *
+     */
     public void splitPopulation(){
         for (int i = 0; i < POPULATION_SIZE; i++) {
             if (!compareFitness(population.get(i),mutatedPopulation.get(i))) {
@@ -68,6 +87,13 @@ public class MultiObjectiveSolver extends Solver{
     }
 
 
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Puzzle> getMutatedPopulation(){
+        return mutatedPopulation;
+    }
 
 
 

@@ -38,7 +38,7 @@ The idea for the hybrid method is, firstly much like a normal EA the population 
 \begin{figure}[h]
 	\caption{Flow diagram for Hybrid repair method}
 	\centering
-	\includegraphics[height=5cm, width=8cm]{./Diagrams/hybridRepairFlowchart}
+	\includegraphics[height=8cm, width=15cm]{./Diagrams/hybridRepairFlowchart}
 \end{figure}
 \subsection{Approach for Multi-objective method}
 The idea for the multi-objective method starts the same as the hybrid method, with generating the population of the puzzle. The next step is once again the same as for the hybrid repair method, the loop which ends if there are no violations and no empty spaces left in the puzzle or the maximum number of generations, and returns the solution if one was found. The next step is then mutating the puzzle, which in this algorithm, creates a copy set of children from the full population, mutates the children and then updates the fitness value of the children. The selection function now creates a new population, which is made from a combination of the two old populations, with the best between each parent and child pair being added to the new population.  
@@ -46,9 +46,9 @@ The idea for the multi-objective method starts the same as the hybrid method, wi
 \begin{figure}[h]
 	\caption{Flow diagram for Multi-objective method}
 	\centering
-	\includegraphics[height=5cm,width=8cm]{./Diagrams/multiobjectiveFlowchart}
+	\includegraphics[height=8cm,width=15cm]{./Diagrams/multiobjectiveFlowchart}
 \end{figure}
-\newpage
+
 \subsection{Experiment design}
 
 The experiment, program will go over a set of 10 puzzles in a folder. For each puzzle in the dataset, it will loop through and solve each program storing the generations and time taken for each puzzle in an output file specific for that puzzle. Once all 30 runs of the solver have been done, the averages for the program can be calculated, the averages will not include failed attempts, as this will massively change the results and averages for successful runs. The failures will also be calculated and with the averages be added to a file specific to the puzzle size and difficulty. These results can then be processed using R, to create more meaningful data.
