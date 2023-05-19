@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.3
+ * @version 1.0
  * Solver Class used to take in and solve valid formatted sudoku puzzles
  */
 

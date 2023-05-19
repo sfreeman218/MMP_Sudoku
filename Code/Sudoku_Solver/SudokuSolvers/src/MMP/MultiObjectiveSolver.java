@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.2
+ * @version 1.0
  * Multi objective solver Class used to take in and solve valid formatted sudoku puzzles, inherits from solver class
  */
 public class MultiObjectiveSolver extends Solver{
@@ -22,7 +22,7 @@ public class MultiObjectiveSolver extends Solver{
     }
 
     /**
-     * Calculates fitness values for 
+     * Calculates fitness values for
      * @param puzzle
      */
     public void updateFitness(Puzzle puzzle){

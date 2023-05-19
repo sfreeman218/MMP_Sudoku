@@ -1,10 +1,50 @@
 File 1:
-Failure: 6
-Average Generations: 27407
-Average time: 78766ms
-Average time with failure: 120736ms
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 14261ms
 File 2:
-Failure: 18
-Average Generations: 25861
-Average time: 73725ms
-Average time with failure: 208557ms
+Failure: 0
+Average Generations: 177
+Average time: 745ms
+Average time with failure: 745ms
+File 3:
+Failure: 0
+Average Generations: 1721
+Average time: 7160ms
+Average time with failure: 7160ms
+File 4:
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 13306ms
+File 5:
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 14878ms
+File 6:
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 12661ms
+File 7:
+Failure: 0
+Average Generations: 2411
+Average time: 9470ms
+Average time with failure: 9470ms
+File 8:
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 12534ms
+File 9:
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 13133ms
+File 10:
+Failure: 1
+Average Generations: 0
+Average time: 0ms
+Average time with failure: 13278ms

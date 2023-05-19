@@ -38,7 +38,7 @@
 	25th April 2023
 \end{center}
 \begin{center}
-	Draft 1.0
+	Version: 1.0 (Released)
 \end{center}
 \newpage
 
@@ -76,37 +76,34 @@ By including my name below, I hereby agree to this project's report and technica
 Name: Sam David Freeman  \\
 
 \vspace{1em}
-Date: 25/04/2023 \\
-\newpage
-\section*{\centering Acknowledgements}
-
-I am grateful to...
-
-I'd like to thank...
+Date: 05/05/2023 \\
 \newpage
 \section*{\centering Abstract}
-
+This paper explore, the logic based puzzle sudoku, looking at a evolutionary algorithms as a way to solve them, which whilst not the most efficient method, could have a niche where it could perform well. The goal is to review two different evolutionary algorithm approaches to solve the sudoku puzzles, and use the results of experimenting with these two methods, to look for any interesting patterns, concerning the difficulty of the puzzles and the algorithms difficulty dealing with them.
 \newpage
 \tableofcontents
 \newpage
 \section{Background}
-	
+
 \subsection{Problem description}
-The logic based combinatorial number placement puzzle Sudoku, is a well-established puzzle game which grew popular in Japan in the 1980s. The classic game of Sudoku consists of a 9x9 grid of spaces, which can only be filled with numbers between 1 and 9. Each space in the 3x3 block, vertical and horizontal columns can only have each number between 1 and 9 once. The puzzle is completed when all spaces in the grid have been filled and no earlier rule has been violated. A more generic description of the puzzle, describes a grid of NxN in size, with N grids contained, using numbers between 1-N. [Add reference to https://sudoku.com/sudoku-rules/]
+The logic based combinatorial number placement puzzle Sudoku is a well-established puzzle game which grew popular in Japan in the 1980s\cite{sudokuWiki}. The classic game of Sudoku consists of a 9x9 grid of spaces, which can only be filled with numbers between 1 and 9. Each space in the 3x3 block, vertical and horizontal columns can only have each number between 1 and 9 once. The puzzle is completed when all spaces in the grid have been filled and none of the rules have been violated. A more generic description of the puzzle, describes a grid of NxN in size, with N grids contained, using numbers between 1-N.\cite{sudoku.com}
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=5cm, width=10cm]{./Diagrams/violationExample}
+	\caption{Example Sudoku puzzle(left), Examples of different violations(right)}
+\end{figure}
+
 \subsection{Background}
-Sudoku is a well established and solved puzzle, with a proven efficient way to be solved established. However, there are other admittedly less efficient AI methods which can be applied to solve this and provides an interesting way to apply and experiment with AI methods learnt at university to a real problem.\newline \newline
-Peter Norvig solved Sudoku [Add reference here https://norvig.com/sudoku.html], using both constraint propagation and search, so the most efficient method is too established. However, looking at a book[ add reference to A modern approach], using a different heuristic search approach seems to be a better way, which has been used before but not fully explored was in there. \newline \newline
-Using evolutionary algorithms(EA), specifically based off the Russel/Norvig approach [modern approach reference] to solve seems like an interesting and most importantly different way to solve the problem, which can also solve several different size puzzles with some level of efficiency. Equally a normal evolutionary algorithm on its own will need some help to be able to solve the sudoku at all leaving several different options, this includes using different hybrid methods to add constraints to the problem, or having constraints included as part of the evolutionary algorithms fitness function.\newline\newline
-EA has several terms that will be used throughout this report.\\
-\begin{itemize}
-	\item Population - The total number of individuals in the algorithm
-	\item Individual - Each state used to represent the objects the algorithm is solving
-	\item Fitness function - A function used to rate each individual in the population based on viable a solution it is
-	\item Selection - The process of taking only a section of the population based on their fitness
-	\item Crossover - The process of mixing parts of the individuals to produce new variation children 
-	\item Mutation -  The process of randomly changing a gene within individuals
-	\item Multi-objective EA - Where the fitness function uses more than one numerical value to rate each individual
-\end{itemize}
+Sudoku is a well established and solved puzzle, with a proven efficient way to be solved established, such as backtracking and rule based algorithms\cite{backtrackRef}. However, there are other admittedly less efficient AI methods which can be applied to solve this and provides an interesting way to apply and experiment with AI methods learnt at university to a real problem. Peter Norvig solved Sudoku \cite{norvigWebsite}, using both constraint propagation and search, being another different method to solve sudoku. Looking in Artificial intelligence: A Modern Approach\cite{modernAI} and on Google Scholar, using a different heuristic search approach seems to be a interesting, less explored way to solve Sudokus. \newline \newline
+
+Evolutionary algorithms, is a search method, that has not been used extensively in the field of solving sudoku, and seems to have some potential. Using evolutionary algorithms(EA), specifically based off the Russel/Norvig approach \cite{modernAI} to solve seems like an interesting and most importantly different way to solve the problem, which can also solve several different size puzzles with some level of efficiency. Equally a normal evolutionary algorithm on its own will need some help to be able to solve the sudoku at all leaving several different options, this includes using different hybrid methods to add constraints to the problem, or having constraints included as part of the evolutionary algorithms fitness function.\newline\newline
+
+\subsection{Evolutionary algorithms}
+
+Evolutionary algorithms, is a large umbrella term which describes a group of algorithms that perform optimization or learning tasks. There are three main features to EAs, They are population based, meaning they have a group of possible solutions which all learn together in parallel. They have fitness values, each member of the population is an individual which each has its own fitness value, with higher fitness being valued more by the algorithm. Finally they are variation driven, meaning they can undergo a number of operators that will change individuals, this is what makes EA to be search algorithms.\cite{introToEA}
+Selection is the process of choosing individuals from the population based on their fitness for later variation. Crossover is one the methods variation available, it takes two parent individuals which are selected and combine there information to produce new  children, which are added to the population. 
+Mutation is another method of variation, which helps maintain diversity in a population by randomly changing a gene within individuals.
+Multi-objective EA - Where there are multiple factors that effect the fitness value of the individuals in the population
 \subsection{Analysis}
 The evolutionary algorithm will need a few key items at implementation:
 \begin{itemize}
@@ -116,11 +113,14 @@ The evolutionary algorithm will need a few key items at implementation:
 	\item A mutation function
 \end{itemize}
 For the fitness function there are two different ways it can be done, a simple fitness function which does not enforce the rules of sudoku, this would need a hybrid approach to help enforce the rules. Alternatively, a more complex fitness function, that considers several factors, to look at fitness i.e., a multi-objective evolutionary algorithm.\newline \newline
-For solving the sudoku a hybrid evolutionary algorithm, there are several different hybrid approaches existing []. The recommended approach for a constraint optimization problem such as sudoku is a repair method. The repair method would work to enforce the rules of the puzzle, by changing each individual in the population that violates the constraints bringing it back into the range of viable solutions.\newline \newline
+For solving the sudoku a hybrid evolutionary algorithm, there are several different hybrid approaches existing\cite{constraintReview}. The recommended approach for a constraint optimization problem such as sudoku is a repair method. The repair method would work to enforce the rules of the puzzle, by changing each individual in the population that violates the constraints bringing it back into the range of viable solutions.\newline \newline
 These two different methods both have valid ways of solving the Sudoku and create a new question. Does a hybrid approach using a repair method work better than a classical approach using multi-objective EAs? They can be compared on, number of generations, runtime, number of puzzles stuck on and looks at patterns between different sudoku puzzle difficulties and seeing if the pattern of human difficulty has any relationship to how long it takes for each EA to solve the puzzle.
 
 \subsection{Process}
-The lifecycle model used in this project, takes the most helpful aspects of different life-cycles, and applies them to be of the most use in this project. The most important and closely followed part of the process is the use of the Kanban board, used to keep track of what tasks there were to do. From Scrum the ideas of sprints and stories are used to build up a log of tasks which are used on the Kanban board and a weekly meeting which were used to review what work had been done that week, discuss improvements on that work and talk about targets for the next week.\newline \newline However, the underlying process used in project is closer to waterfall, with the requirements and research being done first, followed up by implementation, testing and maintenance. Overall, it would describe the process as waterfall with different agile aspects.
+The lifecycle model used in this project, takes the most helpful aspects of different life-cycles, and applies them to be of the most use in this project. The most important and closely followed part of the process is the use of the Kanban board, which will be used to keep track of what tasks there are to do. 
+A Kanban board is a scheduling system used to keep track of tasks. A basic Kanban board has three steps, To do, In progress and Done, however Kanban board for this project will use 5 steps, To do, Planned, In progress, In review and done. The two extra step here will help better define the stage at which a story/problem is at.\\\\
+Scrum is an agile methodology for producing a product that works in sprints, short development cycles that. Scrum has a meeting for each sprint where, the last sprint it reviewed, the current progress on active stories is reviewed(tasks), new stories are allocated where necessary. From Scrum the ideas of sprints and stories are used to build up a log of tasks which are used on the Kanban board and a weekly meeting which were used to review what work had been done that week, discuss improvements on that work and talk about targets for the next week.\newline \newline The waterfall model, is a process that breaks down the development cycle into specific tasks, that must be done in order, starting with analysis and documentation, then moving onto design documentation before finally getting to the coding, testing and maintenance. However, the underlying process used in project is closer to waterfall, with the requirements and research being done first, followed up by implementation, testing and maintenance. Overall, it would describe the process as waterfall with different agile aspects.
+
 
 
 \section{Experiment methods}
@@ -134,30 +134,33 @@ There are two distinct algorithms being used in this project, the Hybrid Repair 
 	\item Is there a large difference in runtime?
 \end{itemize}
 The first question can be answered by looking at the next three questions. For finding out the efficiency or effectiveness of the algorithms, looking at and comparing the number of generations it takes to get to the solution.  For finding out the consistency of the algorithms, looking at the number of times each algorithm fails to solve the puzzle it is presented and also looking at the standard deviation from the average number of generations and runtime. \newline \newline The final question has the least impact on the overall investigation, as it can be affected the most by outside factors, however looking at the average runtimes and standard deviations from the average can clearly show how fast each algorithm generally, however it also worth noting, that this could be due to inefficient programming rather than the algorithms design itself. Due to the randomness of both of the algorithms, both sets of results will have to process and compared using a statistical test which can data that is not normally distributed such as a Wilcoxon test.
+\subsubsection{Hypothesis}
+The hypothesis for the results of the experiment 1, is that, the hybrid method is a more efficient method, provided it does not get stuck down the wrong path. This would mean that for the 4x4 the hybrid will outperform the multi-object method in terms of efficiency, runtime and consistency. However with a larger puzzle such a 9x9, the chances of the hybrid solver getting stuck are higher as there are more potential combinations, this would mean that for the 9x9, if the hybrid method succeeds it will be more efficient, however its consistency will be horrible in comparison to a multi-objective solver. 
 \subsection{Experiment 2}
 The second and arguably more interesting question being looked at in this project, concerns difficulty in Sudoku puzzles. With Sudoku puzzles, there are two main ways to increase the difficulty of the puzzles, the first is by increasing the size of the puzzle, as with larger puzzles, there are more numbers involved and more potential solutions. Meaning that inherently a 4x4 puzzle is easier than a 9x9 puzzle. The other way in which difficulty can be measured for people, is by changing the number of initial squares that are filled. Concerning the minimum number of spaces required for a unique solution to be found by a human, research has been done and it has been found that a minimum of 17 filled in spaces are needed for a Sudoku to be solvable.\newline \newline For the purposes of this question broader catagories for difficulty, will be more appropriate, this will be done by using sudoku generated by Sudoku.com[] and using their difficulty system of Easy, Medium, Hard and Extreme puzzles. The interesting part comes from looking for a link between the difficulty that humans find solving these puzzles and the algorithms that are designed to do so. By looking at both algorithms and using them on different difficulty sets, some questions are created:
 \begin{itemize}
 	\item Is there a correlation between human difficulty and algorithm performance?
 	\item Does either algorithm perform particularly well with a certain difficulty or size puzzle? Why?
-	\item Is there a relationship between initial puzzle size and generations?
+	\item Is there a relationship between number of filled spaces in the puzzle and the number of  generations taken to solve it?
 \end{itemize}
 For the first question, looking at a mapped graph displaying difficulty against runtime and generations. For the second question, looking at the results for the datasets on both sides for each difficulty and finding any noticable difference in the averages outside of the conclusions from experiment 1. The final question further builds on question 1, by seeing if the correlation is simply due to the size of the puzzle given.
-
+\subsubsection{Hypothesis}
+The hypothesis for the second experiment is that the correlation between human difficulty and algorithm performance exists, simply because, with a random algorithm like this, the more spaces that have to be filled in, the more potential combinations of numbers there are in the puzzle that cannot be confirmed to be correct, so whilst there may be a correlation, which more than anything will prove a correlation between filled spaces and the number of generations it will take a puzzle on average.
 \subsection{Approach for Hybrid Repair method}
 
 The idea for the hybrid method is, firstly much like a normal EA the population of the puzzle is created , this will be generated from many starting mutations on the initial sudoku puzzle given. The next step is a loop, that if there are no violations and no empty spaces in any puzzle population, or alternatively the algorithm has reached the maximum number of generations, ends the loop and returns the solution if there is one, otherwise the rest of the steps are taken, all of which are contained within this loop. The next step is sorting and selection, this will take the population, sort them based on their fitness values and then removes half the puzzles from the population. The remaining members of the population would then mutate, creating a mutated child, pushing the population back to the intended size and mutating itself. After this the repair algorithm, looks at every member of the population that is currently breaking one of the games rules and brings it back into the range of a feasible solution. The final step is updating the fitness values of the population, and then loops back to the decision.
-\begin{figure}[h]
-	\caption{Flow diagram for Hybrid repair method}
+\begin{figure}[H]
 	\centering
 	\includegraphics[height=8cm, width=15cm]{./Diagrams/hybridRepairFlowchart}
+	\caption{Flow diagram for Hybrid repair method}
 \end{figure}
 \subsection{Approach for Multi-objective method}
 The idea for the multi-objective method starts the same as the hybrid method, with generating the population of the puzzle. The next step is once again the same as for the hybrid repair method, the loop which ends if there are no violations and no empty spaces left in the puzzle or the maximum number of generations, and returns the solution if one was found. The next step is then mutating the puzzle, which in this algorithm, creates a copy set of children from the full population, mutates the children and then updates the fitness value of the children. The selection function now creates a new population, which is made from a combination of the two old populations, with the best between each parent and child pair being added to the new population.  
 
-\begin{figure}[h]
-	\caption{Flow diagram for Multi-objective method}
+\begin{figure}[H]
 	\centering
 	\includegraphics[height=8cm,width=15cm]{./Diagrams/multiobjectiveFlowchart}
+	\caption{Flow diagram for Multi-objective method}
 \end{figure}
 
 \subsection{Experiment design}
@@ -165,8 +168,8 @@ The idea for the multi-objective method starts the same as the hybrid method, wi
 The experiment, program will go over a set of 10 puzzles in a folder. For each puzzle in the dataset, it will loop through and solve each program storing the generations and time taken for each puzzle in an output file specific for that puzzle. Once all 30 runs of the solver have been done, the averages for the program can be calculated, the averages will not include failed attempts, as this will massively change the results and averages for successful runs. The failures will also be calculated and with the averages be added to a file specific to the puzzle size and difficulty. These results can then be processed using R, to create more meaningful data.
 
 \subsection{Tools}
-The programs used in this project are coded in Java 18, and are written in the IntelliJ IDEA IDE development environment. This is due to familiarity with the language and development environment. Within the development the use 3rd party library through Maven, JUnit was needed, to test individual features and functions of certain key methods, including ones listed in the requirements(see Chapter 3.1). GitHub was used as a version control tool and also used for project management , this was necessary as it allowed for a backup file system, which can be added to from different places, as well as providing a feature which can be used as a kanban board(mentioned in 1.4).
-The statistical analysis needed for the experiments use the programming language R to perform the tests and produce graphs based on the data produced. texStudio and LaTeX were used in the creation of documentation providing a way to structure and document the final report for the project. The diagrams used in the documentation, were created using the tool draw.io, created diagrams visually explaining concepts, flowcharts used to show the basic outline of the program and class diagrams detailing each part of the project. 
+The programs used in this project are coded in Java 18, and are written in the IntelliJ IDEA IDE  development environment\cite{intJ}. This is due to familiarity with the language and development environment. Within the development the use 3rd party library through Maven\cite{maven}, JUnit\cite{junit} was needed, to test individual features and functions of certain key methods, including ones listed in the requirements(see Chapter 3.1). GitHub\cite{github} was used as a version control tool and also used for project management , this was necessary as it allowed for a backup file system, which can be added to from different places, as well as providing a feature which can be used as a kanban board(mentioned in 1.4).
+The statistical analysis needed for the experiments use the programming language R\cite{r} to perform the tests and produce graphs based on the data produced. texStudio and LaTeX\cite{latex} were used in the creation of documentation providing a way to structure and document the final report for the project. The diagrams used in the documentation, were created using the tool draw.io, created diagrams visually explaining concepts, flowcharts used to show the basic outline of the program and class diagrams detailing each part of the project. 
 
 
 \section{Design}
@@ -197,11 +200,11 @@ Perform experiments on sets of example sudoku:
 
 
 \subsection{Representation of Sudoku Puzzle}
-Representing the puzzle within the program was a key issues within its creation. The representation used within this program is rather simple, for any space that has a integer value, it uses that integer, e.g. for a 9x9 puzzle it could be any number between 1 and 9. However the issues of blank spaces when trying to solve the program still remains, to deal with this I have extended the range to 0-9, where 0 represents a blank space and 1-9 represents 1-9. The integers for the puzzle are stored in a 2D array, looking very similar to an actual sudoku puzzle, as seen in figure 2. Due to the simplicity of the representation, it also comes with some notable issues. Namely the size of the search space that this creates for the algorithm, especially as the size of the puzzle increases. 
-\begin{figure}[h]
-	\caption{Representation for encoding of sudoku puzzle}
+Representing the puzzle within the program was a key issues within its creation. The representation used within this program is rather simple, for any space that has a integer value, it uses that integer, e.g. for a 9x9 puzzle it could be any number between 1 and 9. However the issues of blank spaces when trying to solve the program still remains, to deal with this I have extended the range to 0-9, where 0 represents a blank space and 1-9 represents 1-9. The integers for the puzzle are stored in a 2D array, looking very similar to an actual sudoku puzzle, as seen in figure 4. Due to the simplicity of the representation, it also comes with some notable issues. Namely the size of the search space that this creates for the algorithm, especially as the size of the puzzle increases. 
+\begin{figure}[H]
 	\centering
 	\includegraphics[height=4.5cm, width=10cm]{./Diagrams/representationDiagram}
+	\caption{Representation for encoding of sudoku puzzle}
 \end{figure}
 
 
@@ -225,7 +228,7 @@ The RepairBasedSolver class is an implementation of the hybrid repair based EA a
 	\item repairPopulation
 	\item updateFitness
 \end{itemize}
-The getSolution method is the most important method in the class, is an implementation of the EA itself, as detailed in chapter 2.3. Taking a puzzle, the method, generates the population for the algorithm, creates a counter and while loop which checks if the puzzle is completed and the counter has not surpassed the maximum number of generations. Inside the while loop, the counter increases, then the population is repaired, this order changes from figure ?, due to the way the population is generated, as each member is mutated once, meaning many individuals will have have broken the rules, which means without the repair happening before more feasible individuals would be taken out by the selection algorithm. The sort then takes place, with the splitPopulation afterwards before finally mutating and going back to the loop conditions, once the loop has finished the population is cleared and the number of generations taken is returned. \newline\newline The mutation of the population, for each member of the population, creates a copy of the puzzle, mutates and updates the fitness values of both the parent and child puzzle object, then adds the children to the population.\newline\newline The sortPopulation is a method that takes the population and sorts them based on their fitness values. The splitPopulation method acts is the selection algorithm and is rather simple. It removes half the population, by using the sortPopulation all it has to do is remove the front half of the ArrayList. \newline\newline The repairPuzzle method takes the list of violations from the puzzle object, and removes any conflicting space that is not permanent. The repairPopulation method just goes through each member of the population, and loops until the puzzle being looked at is feasible by calling the repairPuzzle method. The updateFitness method takes the roll of the fitness function in this solver class, the fitness calculation is simple, taking the total number of filled spaces as the fitness.
+The getSolution method is the most important method in the class, is an implementation of the EA itself, as detailed in chapter 2.3. Taking a puzzle, the method, generates the population for the algorithm, creates a counter and while loop which checks if the puzzle is completed and the counter has not surpassed the maximum number of generations. Inside the while loop, the counter increases, then the population is repaired, this order changes from figure 2, due to the way the population is generated, as each member is mutated once, meaning many individuals will have have broken the rules, which means without the repair happening before more feasible individuals would be taken out by the selection algorithm. The sort then takes place, with the splitPopulation afterwards before finally mutating and going back to the loop conditions, once the loop has finished the population is cleared and the number of generations taken is returned. \newline\newline The mutation of the population, for each member of the population, creates a copy of the puzzle, mutates and updates the fitness values of both the parent and child puzzle object, then adds the children to the population.\newline\newline The sortPopulation is a method that takes the population and sorts them based on their fitness values. The splitPopulation method acts is the selection algorithm and is rather simple. It removes half the population, by using the sortPopulation all it has to do is remove the front half of the ArrayList. \newline\newline The repairPuzzle method takes the list of violations from the puzzle object, and removes any conflicting space that is not permanent. The repairPopulation method just goes through each member of the population, and loops until the puzzle being looked at is feasible by calling the repairPuzzle method. The updateFitness method takes the roll of the fitness function in this solver class, the fitness calculation is simple, taking the total number of filled spaces as the fitness.
 
 \subsection{Multi-objective class}
 The MultiObjectiveSolver class is an implementation of the multi-objective EA and  is used the experiment as one of the two EA being compared.\\\\ It extends the solver class and has 5 methods and a new attribute:
@@ -240,10 +243,10 @@ The MultiObjectiveSolver class is an implementation of the multi-objective EA an
 
 Mutated population is a field exclusive to the MultiObjectiveSolver class, t is an ArrayList of puzzles which is used to temporarily store puzzles during the mutatePopulation and splitPopulation methods.\\\\ The getSolution method, is the implementation of the EA itself, detailed in chapter 2.4. Taking a puzzle, a population is generated, after this algorithm initiates a counter, used to monitor the number of generations gone through. A while loop, with the conditions to exit the loop being the counter surpassing the maximum number of generations or the puzzle being completed. Inside the loop each time the counter is increased by one. The population then mutates, updates its fitness values and then performs selection on the population. Once one of the exit conditions is satisfied and the loop is exited, the population is cleared, and the number of generations taken is returned. \\\\ The mutatePopulation method, creates a child for each puzzle in the population, these children are added to the mutatedPopulation field, where mutatePuzzle is then used on each of them, and their populations are also updated.\\\\ The splitPopulation method used to represent the selection in the EAs, uses the compareFitness method to compare the fitness of the parent and mutated children puzzle, if the child puzzles fitness values surpasses the parent, it replaces the parent in the main population ArrayList, otherwise the parent stays. Once every member of the population is compared, the mutated population is the then made null.\\\\ The compareFitness function is a helper function used by splitPopulation, it takes two puzzles and compares both of their fitness values, returning true if the first puzzle is greater and false otherwise. The updateFitness method, finds the number of filled spaces and the number of violations that exist.  
 
-\begin{figure}[h]
-	\caption{Class diagram for the program}
+\begin{figure}[H]
 	\centering
 	\includegraphics[height=15cm,width=18cm]{./Diagrams/classDiagram}
+	\caption{Class diagram for the program}
 \end{figure}
 
 \subsection{Experiment program }
@@ -261,5 +264,100 @@ The automatic testing, uses the 3rd party library JUnit and covers most of the i
 \subsubsection{Manual testing}
 The manual testing for the project was done, when behaviours in the outputs of the different solvers were found that were not intentional. The testing was mostly trying to recreate the conditions of the bug, however difficult it was given the randomness and using the breakpoints and debugger in the IntelliJ IDE to identify what was going wrong.
 
+\section{Results and Conclusions}
+
+\subsection{Comparing methods}
+For the results in hybrid and multi-objective algorithms past the medium difficulty, both algorithms failed every single attempt that was made, therefore they will not be covered.
+\subsubsection{Comparing Hybrid and Multi-objective 4x4}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{./Diagrams/barChartComparing4x4}
+	\caption{Chart comparing generations on 4x4 sudokus}
+\end{figure}
+
+When looking at the two algorithms, looking at the chart and the results in general, the hybrid algorithm performs better, has less variance, and holds no outliers when it comes to generations. Whilst it is better when looking at these statistics, it is also worth mentioning that the scope of the chart, is rather zoomed in and the multi-objective solver equally performs quite well. This makes sense since the repair method used removes a lot of uncertainty due to its ability to remove values it knows are wrong. On the other hand since, the multi-objective solver does not have a clear set of rules which it follows, especially working on the 4x4 creates a larger amount of guess work for the solver. The IQR and median of the hybrid method are also lower, which builds on the idea, that for the 4x4 puzzles, the hybrid can reel in and control the randomness of the mutation. Doing a Wilcoxon test to compare the two solvers gave a p value of 0.0001766 and a w of 0, from which we can interpret that the two sets of data are very different from each other. Which shows that at least in terms of generations, that the hybrid algorithm is a more effective algorithm than the multi-objective solver.
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{./Diagrams/barChart4x4Time}
+	\caption{Chart comparing runtime on 4x4 sudokus}
+\end{figure}
+The runtime of the algorithms futher supports this conclusion, with a similar chart state to the generation chart. It is also worth noting that in the 4x4 puzzles neither algorithm failed to complete a single puzzle.
+
+\subsubsection{Comparing Hybrid and Multi-objective 9x9 easy}
+Results for 9x9 easy puzzles
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{./Diagrams/barChartComparing9x9Easy}
+	\caption{Chart comparing generations on easy 9x9 sudokus}
+\end{figure}
+By looking at the graphs alone, it could once again be concluded, that in general hybrid is a more efficient algorithm, however it has lost its stability as an algorithm, and has the same median as the multi-objective algorithm. Furthermore the hybrid algorithm also failed to complete puzzles 64 times out of the 300 runs over all the easy 9x9s. Whereas the multi-objective did not fail a single puzzle, has most of its results close to the hybrid results values. Looking at the Wilcoxon test results, the p value was 0.5205 with a w of 41, meaning the two are quite similar. However if the failed results were included in the data here, the multi-objective would have a smaller range, median and a smaller IQR.
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{./Diagrams/barChart9x9EasyTime}
+	\caption{Chart comparing runtime on easy 9x9 sudokus}
+\end{figure}
+The runtime excluding the failed values show that the hybrid method is generally faster but if the failed values were added, the averages would once again switch up. In the case of easy 9x9 sudokus, it seems multi-objective is a better option due to its failure rate of 0, which is worth the potential efficiency lost.
+\subsubsection{Comparing Hybrid and Multi-objective 9x9 Medium}
+
+Due to both solvers failed to complete most of the puzzles the data for this sections, is hard to map the data out in a way that displays any meaningful insight, so as an alternative the only comparison that can be made by this set is the runtime.
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{./Diagrams/barChartTime9x9Medium}
+	\caption{Chart comparing runtime on medium 9x9 sudokus}
+\end{figure}
+Looking at the runtime, the hybrid algorithm seems to be faster on average, however it has a larger range in runtimes, once again shows the instability of the hybrid method. It is also worth noting that of the puzzles that were solved, the average number of generations for the hybrid methods was a lot lower than the average for the multi-objective algorithm.
+\subsection{Conclusion for experiment 1}
+In summary looking at the questions being asked in experiment 1 in section 2.1. For the question of which algorithm is more efficient, overall the hybrid algorithm tends to find an answer faster, however with an increase in size and difficulty, the chances of the hybrid algorithm getting stuck and not giving any answer, raises significantly higher than the multi-objective algorithm, which whilst having slower execution and using more generations, has a better chance of finding an answer, rather than getting stuck. The hybrid algorithms tendency to get stuck, could originate from its greedy repair algorithm, which only repairs, what appears to be the best option at the time, with no forward thinking being applied. The most consistent method out of the two seems to be the multi-objective solver, which has generally had a smaller IQR and range than the hybrid algorithm, furthermore the algorithm also seems to be able to find the correct answer more consistently than the hybrid algorithm.  
+
+
+\subsection{Comparing difficulties}
+Due to the insufficient data produced by the algorithms, it would be hard to make any conclusions about the different difficulties, and therefore also hard to comment on experiment 2 and the questions brought up in it. However if we look at how gradually both algorithms failed more with an increase of size, space and difficulty, so there is a high chance that these relationships exist and are just linked to the number empty squares in the starting state of the puzzle.
+
+\section{Evaluation}
+
+\subsection{Process and research}
+The process followed throughout the project, was not a great fit for the research style project, that was being done, due to the sprint structure, the weeks were kept to, some programming was still going on at a time when the final idea for the design of the project was not complete, this lead to many issues later on, including having to completely restructure the solver class. Furthermore with a mix of this process and simply taking too much time to decide on the research questions, meant that there was no good driven direction, until quite late on in the project, with more decisiveness being needed. More relevant research should have been done, which would have helped speed up the process and also solidify knowledge on the topic being looked at. This was another reason that the experiment questions were created late into the process. The other agile features of the proposed process, could have been kept to more diligently, which would have helped push the development of the project faster, such as a more active use of the Kanban board. Upon reflection a more structured waterfall style development approach, would be more appropriate for this project, as there is no point having developed features early, if they aren't fully fleshed out ideas that are likely to change a lot in time.
+
+\subsection{Design, implementation and testing}
+A large issues that effected the experiment greatly, came from a design and implementation issue, where neither algorithm, was good enough to consistently correctly find the solution to the sudoku. The hybrid repair algorithm used a greedy approach when repairing the constraint violations it found in the puzzle. Upon reflection, having one of the algorithms being a well established method, known to be effective at solving sudoku would have been a better idea, creating a baseline to compare one method to rather than two unstable algorithms being compared against each other.
+
+The testing of a larger variation of puzzles, before the experiments were done, would have allowed, the issues found during the experiments to do with the hard and extreme puzzles not being solved at all. If the testing was more varied, it could have been caught on to and solved, however due to poor time management, there was no time to overhaul large sections of the solvers, and retest them. \\\\The documentation of the design, was rather poor and sparse early on, which meant that the ideas for the code were directly designed and implemented from memory, which meant sometimes ideas were incorrectly implemented or outright forgotten about. If the issues with the design had been identified and solved earlier, then both experiments could have been completed and answered in greater depth, due to a greater sample size of data to work with.
+
+\subsection{Reflection on tool usage}
+The usage of the Github source control tool and Kanban board were underutilised, meaning that, adding and removing the new stories from the board did not get reviewed every week, which meant time was wasted, trying to remember the direction the project was being taken that week. The lack of source control use, meant that often work would be left behind and could not be done on the go.
+
+More experience using R would have been a good idea, before deciding to use it for statistical analysis, so the analysis itself could be focused on more and interpreted well. The other tools used in the project were well utilised.
+\subsection{Report}
+Overall the report, has several places where it could be improved, many areas could use more detail and explanation, to help better display understanding. This would also help boost the word count up to a more acceptable number, however between timing and a general poor perspective on what needs to be explained in detail it did not happen.
+
+
+
+
+\newpage
+\section*{Appendix A}
+Only one third party library was used in this project.
+JUnit 5 
+
+\newpage
+\begin{thebibliography}{20}
+\bibitem{sudokuWiki} Wikipedia Contributors, “Sudoku,” Wikipedia, Oct. 22, 2019. https://en.wikipedia.org/wiki/Sudoku
+\bibitem{sudoku.com} “Sudoku Rules - Strategies, solving techniques and tricks,” sudoku.com. https://sudoku.com/sudoku-rules/
+\bibitem{backtrackRef} Berggren, Patrik, and David Nilsson. "A study of Sudoku solving algorithms." Royal Institute of Technology, Stockholm (2012).
+\bibitem{norvigWebsite}	P. Norvig, “Solving Every Sudoku Puzzle,” norvig.com. https://norvig.com/sudoku.html
+\bibitem{modernAI} S. Russell and P. Norvig, Artificial Intelligence : a Modern Approach. Erscheinungsort Nicht Ermittelbar: Pearson Education Limited, 2013.
+\bibitem{constraintReview} Carlos A Coello Coello, Theoretical and numerical constraint-handling techniques used with evolutionary algorithms: a survey of the state of the art, Computer Methods in Applied Mechanics and Engineering, Volume 191, Issues 11–12, 2002, Pages 1245-1287, ISSN 0045-7825, https://doi.org/10.1016/S0045-7825(01)00323-1. (https://www.sciencedirect.com/science/article/pii/S0045782501003231)
+
+\bibitem{intJ} JetBrains, “IntelliJ IDEA,” JetBrains, 2019. https://www.jetbrains.com/idea/
+\bibitem{maven} “Maven – Welcome to Apache Maven,” maven.apache.org. https://maven.apache.org/
+\bibitem{junit} “JUnit 5,” Junit.org, 2018. https://junit.org/junit5/
+\bibitem{latex} “LaTeX - A document preparation system,” Latex-project.org, 2019. https://www.latex-project.org/
+\bibitem{github} GitHub, “GitHub,” GitHub. https://github.com/
+\bibitem{r} R Core Team, “R: The R Project for Statistical Computing,” R-project.org, 2022. https://www.r-project.org/
+\bibitem{introToEA} Yu, Xinjie, and Mitsuo Gen. Introduction to evolutionary algorithms. Springer Science \& Business Media, 2010.
+
+\end{thebibliography}
+
 
 \end{document}
+

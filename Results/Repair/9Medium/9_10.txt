@@ -1,0 +1,3 @@
+Try 0
+Generations:31587
+Time taken: 109295ms

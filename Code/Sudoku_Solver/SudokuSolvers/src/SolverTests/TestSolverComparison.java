@@ -18,12 +18,10 @@ public class TestSolverComparison {
 
         TestSolverComparison t = new TestSolverComparison();
 
-/*
-        t.testMultiObjSolverFor9x9Medium();
-        t.testMultiObjSolverFor9x9Hard();
-        t.testMultiObjSolverFor9x9Extreme();
-  */
 
+        t.testMultiObjSolverFor9x9Medium();
+        t.testMultiObjSolverFor9x9Extreme();
+        t.testMultiObjSolverFor9x9Hard();
         t.testRepairSolverFor9x9Medium();
         t.testRepairSolverFor9x9Hard();
         t.testRepairSolverFor9x9Expert();
@@ -144,9 +142,10 @@ public class TestSolverComparison {
                     else {failure++;}
                 }
                 myWriter = new FileWriter(resultFile + "/" + puzzleSize + difficulty +".txt",true);
+                if (failure != 30){
                 avTiIncFailure = avTiIncFailure / 30;
                 averageGeneration = averageGeneration / (30-failure);
-                averageTime = averageTime / (30-failure);
+                averageTime = averageTime / (30-failure);}
                 myWriter.write("File " + i +":");
                 myWriter.write("\nFailure: " + failure);
                 myWriter.write("\nAverage Generations: " + averageGeneration);

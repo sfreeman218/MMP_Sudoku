@@ -1,0 +1,165 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  5 MAY 2023 10:03
+entering extended mode
+**./Results_section.tex
+(Results_section.tex
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03>
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count183
+\float@exts=\toks15
+\float@box=\box47
+\@float@everytoks=\toks16
+\@floatcapt=\box48
+)
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
+x.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count184
+\l__pdf_internal_box=\box49
+) (Results_section.aux)
+\openout1 = `Results_section.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count185
+\scratchdimen=\dimen141
+\scratchbox=\box50
+\nofMPsegments=\count186
+\nofMParguments=\count187
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count188
+\MPscratchDim=\dimen142
+\MPnumerator=\count189
+\makeMPintoPDFobject=\count190
+\everyMPtoPDFconversion=\toks19
+)
+(C:\Users\Sam\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
+e.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+<../Diagrams/barChartComparing4x4.png, id=1, 497.60907pt x 499.8675pt>
+File: ../Diagrams/barChartComparing4x4.png Graphic file (type png)
+<use ../Diagrams/barChartComparing4x4.png>
+Package pdftex.def Info: ../Diagrams/barChartComparing4x4.png  used on input li
+ne 21.
+(pdftex.def)             Requested size: 284.52847pt x 284.53844pt.
+<../Diagrams/barChart4x4Time.png, id=3, 499.8675pt x 499.8675pt>
+File: ../Diagrams/barChart4x4Time.png Graphic file (type png)
+<use ../Diagrams/barChart4x4Time.png>
+Package pdftex.def Info: ../Diagrams/barChart4x4Time.png  used on input line 28
+.
+(pdftex.def)             Requested size: 284.53844pt x 284.53844pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../Diagrams/barChartComparing9x9Easy.png, id=4, 495.35063pt x 504.38437pt>
+File: ../Diagrams/barChartComparing9x9Easy.png Graphic file (type png)
+<use ../Diagrams/barChartComparing9x9Easy.png>
+Package pdftex.def Info: ../Diagrams/barChartComparing9x9Easy.png  used on inpu
+t line 37.
+(pdftex.def)             Requested size: 284.52962pt x 284.53131pt.
+<../Diagrams/barChart9x9EasyTime.png, id=5, 504.38437pt x 504.38437pt>
+File: ../Diagrams/barChart9x9EasyTime.png Graphic file (type png)
+<use ../Diagrams/barChart9x9EasyTime.png>
+Package pdftex.def Info: ../Diagrams/barChart9x9EasyTime.png  used on input lin
+e 43.
+(pdftex.def)             Requested size: 284.53131pt x 284.53131pt.
+[1
+
+{C:/Users/Sam/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <../Diagrams/barCh
+artComparing4x4.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../Diagrams/barChartTime9x9Medium.png, id=14, 506.6428pt x 502.12593pt>
+File: ../Diagrams/barChartTime9x9Medium.png Graphic file (type png)
+<use ../Diagrams/barChartTime9x9Medium.png>
+Package pdftex.def Info: ../Diagrams/barChartTime9x9Medium.png  used on input l
+ine 52.
+(pdftex.def)             Requested size: 284.52977pt x 284.54448pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <../Diagrams/barChart4x4Time.png>] [3 <../Diagrams/barChartComparing9x9Easy.
+png>] [4 <../Diagrams/barChart9x9EasyTime.png> <../Diagrams/barChartTime9x9Medi
+um.png>] (Results_section.aux) ) 
+Here is how much of TeX's memory you used:
+ 1278 strings out of 479799
+ 20568 string characters out of 2870672
+ 290767 words of memory out of 3000000
+ 18297 multiletter control sequences out of 15000+200000
+ 536906 words of font info for 35 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 66i,6n,72p,1225b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Sam/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Sam/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Sam/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on Results_section.pdf (4 pages, 85865 bytes).
+PDF statistics:
+ 38 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+

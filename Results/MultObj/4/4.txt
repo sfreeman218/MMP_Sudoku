@@ -1,15 +1,5 @@
 File 1:
 Failure: 0
-Average Generations: 79
-Average time: 84ms
-Average time with failure: 0ms
-File 1:
-Failure: 0
-Average Generations: 71
-Average time: 75ms
-Average time with failure: 75ms
-File 1:
-Failure: 0
 Average Generations: 76
 Average time: 79ms
 Average time with failure: 79ms

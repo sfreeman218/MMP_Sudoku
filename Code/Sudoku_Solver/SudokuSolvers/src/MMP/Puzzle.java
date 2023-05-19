@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 /**
  * @author Sam David Freeman sdf2@aber.ac.uk
- * @version 0.1
+ * @version 1.0
  * Puzzle Class used to represent sudoku puzzles
  */
 
